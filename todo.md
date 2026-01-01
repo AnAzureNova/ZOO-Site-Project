@@ -6,11 +6,9 @@ MAIN PAGE
 //
 Informace pro návštěvníky
 - O Zoo
-- Otevírací doba
-- Ceník
+- Otevírací doba a Ceník
 - Mapa
 - Pravidla a návštěvní řád
-- Akce a programy ?
 - Často kladené otázky
 //
 Naše zvířata a expozice
@@ -19,6 +17,7 @@ Naše zvířata a expozice
 - Výstavy
 //
 Novinky
+- Akce a programy ?
 - News-like grid
 - Pagination
 //

@@ -3,8 +3,9 @@
     src: url("resources/fonts/FairymentalStash-Regular.woff") format("woff");
 }
 body{
+    color: #fff;
     font-family: Fairymental;
-    background-color: #1d251e;
+    background-color: #000000;
 }
 p{
     font-size: 1rem;
@@ -19,10 +20,8 @@ h2{
 h4{
     font-size: 1.3rem;
 }
-
-
 nav{
-    margin: 20px;
+    padding: 20px;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,21 +30,25 @@ nav{
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     gap: 50px;
 }
 .navbar_dropdownDiv a{
-    color: #c7df6e;
     text-decoration: none;
 }
 .navbar_dropdownDiv a:hover{
-    color: #fff;
+    color: #ffe7c8;
     scale: 120%;
     transform: rotate(1deg);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 }
+.navbar_dropdownDiv a:hover .pointer{
+    scale: 150%;
+}
 #logo{
     width: 50%;
 }
-#flag{
-    width: 5%;
+#logo:hover{
+    scale: 110%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 }
