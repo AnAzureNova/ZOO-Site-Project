@@ -127,7 +127,8 @@
 /*-------------------------------------------------------------------------------*/
 /*LANGUAGE SWITCHER DROPDOWN MENU*/
 #flag{
-    height: 50px;
+    padding-top: 5px;
+    height: 45px;
     width: auto;
     object-fit: contain;
 }

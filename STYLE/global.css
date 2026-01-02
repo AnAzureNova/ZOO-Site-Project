@@ -2,13 +2,23 @@
     font-family: "Fairymental";
     src: url("resources/fonts/FairymentalStash-Regular.woff") format("woff");
 }
+@font-face {
+    font-family: "DINPro";
+    src: url("resources/fonts/DINPro-Medium_13936.woff") format("woff");
+}
+@font-face {
+    font-family: "Comfortaa";
+    src: url("resources/fonts/Comfortaa_Regular.woff") format("woff");
+}
 body{
     color: #fff;
-    font-family: Fairymental;
+    font-family: DINPro; /*Fairymental for goofyness*/
     background-color: #000000;
 }
 p{
     font-size: 1rem;
+    font-family: Comfortaa;
+    letter-spacing: 1px;
 }
 h1{
     font-size: 5rem;
@@ -20,18 +30,19 @@ h2{
 h4{
     font-size: 1.3rem;
 }
+h5{
+    font-size: 1.1rem;
+}
+/*NAVBAR (GLOBAL)*/
 nav{
-    padding: 20px;
+    padding: 30px;
     display:flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 .navbar_dropdownDiv{
     display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 .navbar_dropdownDiv a{
     text-decoration: none;
@@ -45,10 +56,69 @@ nav{
 .navbar_dropdownDiv a:hover .pointer{
     scale: 150%;
 }
-#logo{
-    width: 50%;
+.logo{
+    scale: 100%;
+    width: 10%;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsteamcdn-a.akamaihd.net%2Fsteam%2Fapps%2F703080%2Flogo.png%3Ft%3D1590092904&f=1&nofb=1&ipt=9e398be3197bbdc82db28a7a281443f7705c85f9148fb5a2447a1fd0dbc2cec7"); /*PLACEHOLDERRRRR MAKE YOUR OWN GOD DAMNN*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
-#logo:hover{
+.logo:hover{
     scale: 110%;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*FOOTER (GLOBAL)*/
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+}
+.footer_contents{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+footer a{
+    color: #bdbdbd;
+    font-family: Comfortaa;
+    text-decoration: none;
+}
+footer  a:hover{
+    color: #fff;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.footer_info {
+    max-width: 20%;
+}
+.footer_other {
+    display: flex;
+    gap: 50px;
+}
+.footer_other_sub{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#logoFooter{
+    width: 400px;
+}
+#iframeMap{
+    aspect-ratio: 1/1;
+    width: 250px;
+    height: auto;
+    margin: 10px 0;
+}
+.footer_bottomText{
+    display: flex;
+    justify-content: space-between;
+    color: #474747;
+    padding: 10px 50px;
 }
