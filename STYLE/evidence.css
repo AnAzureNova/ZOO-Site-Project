@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: url("resources/fonts/Comfortaa_Regular.woff") format("woff");
+}
+body{
+    color: #fff;
+    background-color: #313131;
+    font-family: Comfortaa;
+    margin: 0;
+    padding: 0;
+}
+.evidence_header{
+    height: 80px;
+    padding: 10px;
+    display:flex;
+    background-color: black;
+}
+.logo{
+    scale: 80%;
+    width: 10%;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsteamcdn-a.akamaihd.net%2Fsteam%2Fapps%2F703080%2Flogo.png%3Ft%3D1590092904&f=1&nofb=1&ipt=9e398be3197bbdc82db28a7a281443f7705c85f9148fb5a2447a1fd0dbc2cec7"); /*PLACEHOLDERRRRR MAKE YOUR OWN GOD DAMNN*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.logo:hover{
+    scale: 100%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.temp{
+    padding: 500px;
+}
+footer{
+    height: 80px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: black;
+}
+footer a{
+    color: #707070;
+    text-decoration: none;
+}
+.footer_bottomText{
+    display: flex;
+    justify-content: space-between;
+    color: #474747;
+    padding: 0px 50px;
+}
