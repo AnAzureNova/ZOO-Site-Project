@@ -24,7 +24,7 @@
     width: 100%;
     top: 80%;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 25px;
     background-color: #0000006e;
     box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
@@ -149,7 +149,7 @@
     top: 100%;
     right: -10px;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     background-color: #00000020;
     box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
     -webkit-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
