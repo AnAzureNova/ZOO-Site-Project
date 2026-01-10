@@ -9,6 +9,22 @@
     <title>INFORMAČNÍ SYSTÉM Zoo Brno 2</title>
 </head>
 <body>
+<!----------------------------------------------------------------------------------------------------------->
+<!--LOGIN WINDOW-->
+    <div class="backdrop" id="blur_visibility"></div>
+    <div class="evidence_login_window" id="login_visibility">
+        <h1> Vítejte zpět!</h1>
+        <p>Prosím zadejte své uživatelské jméno a heslo</p>
+        <div class="login_form" id="loginForm">
+            <input type="text" id="loginUser" placeholder="UŽIVATELSKÉ JMÉNO" autocomplete="off" onchange="clearLabel();">
+            <input type="password" id="loginPass" placeholder="HESLO" autocomplete="off" onchange="clearLabel();">
+            <span id="loginStatus"></span>
+            <button id="loginButton" type="submit" onclick="loginAuth();">PŘÍHLÁSIT</button>
+        </div>
+        <a href="index.html">Zpět na hlavní stránku</a>
+    </div>
+<!----------------------------------------------------------------------------------------------------------->
+<!--NAVBAR-->
     <nav>
         <div class="evidence_header">
             <div class="logo">
@@ -16,10 +32,25 @@
             </div>
             <h1>Informační a evidenční systém</h1>
         </div>
+        <div class="user_dropdown">
+            <img id="usericon" src="STYLE/resources/icons/user.png">
+            <div class="dropdownContents">
+                <p>UŽIVATEL: <span id="username_label">####</span></p>
+                <p>POZICE: <span id="position_label">####</span></p>
+                <button onclick="logoutUser();">ODHLÁSIT</button>
+            </div>
+        </div>
     </nav>
+<!----------------------------------------------------------------------------------------------------------->
+<!--MAIN-->
     <main>
+        <section>
+
+        </section>
         <div class="temp">temp</div>
     </main>
+<!----------------------------------------------------------------------------------------------------------->
+<!--FOOTER-->
     <footer>
         <div class="footer_bottomText">
             <p>© ZOO Brno 2 2026 | Management system</p> <!--DEBUG access to management | delete later on-->
@@ -28,5 +59,6 @@
     </footer>
     <script src="SCRIPTS/global.js"></script>
     <script src="SCRIPTS/connection.js"></script>
+    <script src="SCRIPTS/login.js"></script>
 </body>
 </html>

@@ -9,11 +9,106 @@ body{
     margin: 0;
     padding: 0;
 }
-.evidence_header{
+body.login_open {
+    overflow: hidden;
+}
+/*------------LOGIN------------*/
+.evidence_login_window{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 25%;
+    width: 30%;
+    scale: 100%;
+    padding: 40px 80px;
+    gap: 0px;
+    position: fixed;
+    justify-self: center;
+    background-color: #131313;
+    border: solid white 2px;
+    border-radius: 20px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+    z-index: 100;
+}
+.login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.evidence_login_window input{
+    font-size: 1.2rem;
+    font-family: Comfortaa;
+    color: #fff;
+    background-color: #141414;
+    border: solid white 1px;
+    border-radius: 10px;
+    width: 60%;
+    padding: 10px 30px;
+    margin: 10px 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+.evidence_login_window input:focus{
+    width: 80%;
+    padding: 12px 30px;
+}
+.evidence_login_window button{
+    font-size: 1.2rem;
+    font-family: Comfortaa;
+    color: #747474;
+    margin-top: 30px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #141414;
+    border: solid #747474 1px;
+    cursor: pointer;
+}
+.evidence_login_window button:hover{
+    color: #fff;
+    border: solid #fff 1px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.evidence_login_window span{
+    color: #ffabab;
+    margin-top: 10px;
+}
+.evidence_login_window a{
+    color: #8f8f8f;
+    margin-top: 20px;
+    font-family: Comfortaa;
+    text-decoration: none;
+}
+.evidence_login_window a:hover{
+    color: #fff;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+    z-index: 99;
+}
+/*------------NAVBAR------------*/
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
     height: 80px;
     padding: 10px;
+}
+.evidence_header{
     display:flex;
-    background-color: black;
+    width: 80%;
 }
 .logo{
     scale: 80%;
@@ -32,6 +127,66 @@ body{
     width: 100%;
     height: 100%;
 }
+.user_dropdown{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 10px 20px 0 0;
+    width: 40px;
+}
+.user_dropdown:hover .dropdownContents{
+    display: flex;
+}
+.dropdownContents{
+    display: none;
+    position: absolute;
+    width: 10%;
+    top: 90px;
+    flex-direction: column;
+    background-color: #000000;
+    box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -moz-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: solid white 1px;
+    z-index: 98;
+}
+.dropdownContents p{
+    padding: 5px 0;
+    margin: 0;
+}
+.dropdownContents span{
+    color: #838383;
+    margin-left: 10pxs;
+}
+.dropdownContents button{
+    font-family: Comfortaa;
+    color: #747474;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #000000;
+    border: solid #747474 1px;
+    cursor: pointer;
+}
+.dropdownContents button:hover{
+    color: #fff;
+    border: solid #fff 1px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.user_dropdown #usericon{
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+.user_dropdown #usericon:hover{
+    scale: 110%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+/*------------FOOTER------------*/
 .temp{
     padding: 500px;
 }
