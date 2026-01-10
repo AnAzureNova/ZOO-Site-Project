@@ -8,7 +8,7 @@ const admin = {name:"admin", pass:"admin", pos:"Admin", status:"immune"};
 const user1 = {name:"user1", pass:"abc123", pos:"Employee", status:"unrestricted"};
 const user2 = {name:"user2", pass:"weakpass1212", pos:"Employee", status:"unrestricted"};
 const dummy = {name:"DUMMY", pass:"asd", pos:"Unknown", status:"restricted"};
-let isLoggedIn = true;
+let isLoggedIn = false;
 let isBlocked = false;
 let users = [admin, user1, user2, dummy];
 let username;
