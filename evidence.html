@@ -13,7 +13,7 @@
 <!--LOGIN WINDOW-->
     <div class="backdrop" id="blur_visibility"></div>
     <div class="evidence_login_window" id="login_visibility">
-        <h1> Vítejte zpět!</h1>
+        <h1>Informační a evidenční systém ZOO přihlášení</h1>
         <p>Prosím zadejte své uživatelské jméno a heslo:</p>
         <div class="login_form" id="loginForm">
             <input type="text" id="loginUser" placeholder="UŽIVATELSKÉ JMÉNO" autocomplete="off" onchange="clearLabel();">
@@ -22,21 +22,22 @@
             <button id="loginButton" type="submit" onclick="loginAuth();">PŘÍHLÁSIT</button>
         </div>
         <a href="index.html">Zpět na hlavní stránku</a>
+        <p style="color: rgb(31, 31, 31);" onclick="debugCloseLogin();">DEBUG.closewindow</p>
+        <!--DEBUG CLOSE LOGIN DELETE LATER-->
     </div>
 <!----------------------------------------------------------------------------------------------------------->
 <!--NAVBAR-->
     <nav>
         <div class="evidence_header">
             <div class="logo">
-                <a href="index.html"></a>
             </div>
             <h1>Informační a evidenční systém</h1>
         </div>
         <div class="user_dropdown">
             <img id="usericon" src="STYLE/resources/icons/user.png">
             <div class="dropdownContents">
-                <p>UŽIVATEL: <span id="username_label">####</span></p>
-                <p>POZICE: <span id="position_label">####</span></p>
+                <p>UŽIVATEL: <span id="usernameLabel">unknown</span></p>
+                <p>POZICE: <span id="positionLabel">unknown</span></p>
                 <button onclick="logoutUser();">ODHLÁSIT</button>
             </div>
         </div>
@@ -45,9 +46,44 @@
 <!--MAIN-->
     <main>
         <section>
-
+            <div class="evidence_main">
+                <div class="evidence_main_header">
+                    <img src="STYLE/resources/icons/profile.png">
+                    <h2>Vítejte zpět, <span id="realnameLabel">unknown</span>!</h2>
+                </div>
+                <hr>
+                <div class="evidence_main_buttons">
+                    <div>
+                        <button id="employeesButton">ZÁZNAMY ZAMĚSTNANCŮ</button><br>
+                        <label for="employeesButton">Zobrazení a úprava uživatelů - přístup povolen pouze pro správce systému.</label>
+                    </div>
+                    <div>
+                        <button id="visitorsButton">ZÁZNAMY NÁVŠTĚVNÍKŮ</button><br>
+                        <label for="visitorsButton">Evidence návštěvníků - záznamy zakoupených vstupenek a vstupy do ZOO</label>
+                    </div>
+                    <div>
+                        <button id="animalsButton">SPRÁVA ZVÍŘAT</button><br>
+                        <label for="animalsButton">Evidence zvířat a expozic - seznam a správa  registrovaných zvýřat</label>
+                    </div>
+                    <div>
+                        <button id="feedingtimesButton">KRMENÍ ZVÍŘAT</button><br>
+                        <label for="feedingtimesButton">Doby krmení zvířat - nastavení dob krmení pro jednotlivé expozice</label>
+                    </div>
+                    <div>       
+                        <button id="openingsButton">OTEVÍRACÍ DOBA</button><br>
+                        <label for="openingsButton">Doby otevírání - správa otevírací a zavírací doby areálu</label>
+                    </div>
+                    <div>
+                        <button id="shoprecsButton">ZÁZNAMY E-SHOPU</button><br>
+                        <label for="shoprecsButton">Záznamy eshopu</label>
+                    </div>
+                </div>
+            </div>
+            <div class="evidence_main_log">
+                <div id="log">
+                </div>
+            </div>
         </section>
-        <div class="temp">temp</div>
     </main>
 <!----------------------------------------------------------------------------------------------------------->
 <!--FOOTER-->
