@@ -12,6 +12,65 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
 }
-.temp{
-    padding: 500px;
+.main_event_big{
+    display: flex;
+    flex-direction: column;
+    padding: 3% 10%;
+    margin: 5%;
+    /*background-color: #00000091;*/
+    border-radius: 50px;
+}
+.main_event_big h1{
+    padding: 0;
+    margin: 0;
+}
+.main_event_big p{
+    font-size: 1.2rem;
+}
+.main_event_big span{
+    color: #ffc272;
+}
+.main_event_big a{
+    color: #c5c5c5;
+    text-decoration: none;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.main_event_big a:hover{
+    color: #ffc272;
+}
+.main_event_big hr{
+    margin: 20px 0;
+    width: 20%;
+    padding: 1px;
+    background-color: #fff;
+}
+.main_event_big #buyRedirect{
+    font-family: DINPro;
+    text-align: center;
+    color: #fff;
+    background-color: #000000;
+    border: solid white 1px;
+    border-radius: 20px;
+    width: 15%;
+    padding: 10px 20px;
+    margin: 40px 5px;
+}
+.main_event_big #buyRedirect:hover{
+    color: #ffc272;
+    border: solid #ffc272 1px;
+    scale: 110%;
+    transform: rotate(1deg);
+}
+.main_event_big_info{
+    display: flex;
+    width: 40%;
+    padding: 15px;
+    gap: 20px;
+}
+.main_event_big_info:hover{
+    scale: 110%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+.main_event_big_info span{
+    border: solid #ffffff 1px;
 }
