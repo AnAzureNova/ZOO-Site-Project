@@ -15,8 +15,7 @@ body {
 .main_event_big{
     display: flex;
     flex-direction: column;
-    padding: 3% 10%;
-    margin: 5%;
+    padding: 10% 15% 3% 15% ;
     /*background-color: #00000091;*/
     border-radius: 50px;
 }
@@ -32,7 +31,6 @@ body {
 }
 .main_event_big a{
     color: #c5c5c5;
-    text-decoration: none;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 }
 .main_event_big a:hover{
@@ -44,7 +42,7 @@ body {
     padding: 1px;
     background-color: #fff;
 }
-.main_event_big #buyRedirect{
+#redirectButton{
     font-family: DINPro;
     text-align: center;
     color: #fff;
@@ -54,12 +52,16 @@ body {
     width: 15%;
     padding: 10px 20px;
     margin: 40px 5px;
+    box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -moz-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
 }
-.main_event_big #buyRedirect:hover{
+#redirectButton:hover{
     color: #ffc272;
     border: solid #ffc272 1px;
     scale: 110%;
     transform: rotate(1deg);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
 }
 .main_event_big_info{
     display: flex;
@@ -73,4 +75,26 @@ body {
 }
 .main_event_big_info span{
     border: solid #ffffff 1px;
+}
+.main_event_sub{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0 6%;
+    gap: 4%;
+}
+.main_event_sub article{
+    padding: 50px;
+    border: solid white 1px;
+    background-color: #000;
+    border-radius: 30px;
+    box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+    -moz-box-shadow: 21px 29px 80px 5px rgba(0,0,0,0.51);
+}
+.main_event_sub_title{
+    padding: 0 15%;
+}
+.main_event_sub_extra{
+    display: flex;
+    justify-content: center;
 }
