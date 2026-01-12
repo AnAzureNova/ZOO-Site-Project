@@ -9,7 +9,7 @@ const admin = {name:"admin", realname:"System admin", pass:"admin", pos:"Admin",
 const user1 = {name:"user1", realname:"Zaměstnanec 1", pass:"abc123", pos:"Employee", status:"unrestricted"};
 const user2 = {name:"user2", realname:"UsernameHere", pass:"weakpass1212", pos:"Employee", status:"unrestricted"};
 const dummy = {name:"DUMMY", realname:"unknown", pass:"asd", pos:"unknown", status:"restricted"};
-let isLoggedIn = false;
+let isLoggedIn = true;
 let isBlocked = false;
 let users = [admin, user1, user2, dummy];
 let username;
@@ -17,7 +17,7 @@ let password;
 let strikeCount = 0;
 let logtime;
 
-
+document.getElementById("popupEmployee").classList.add("hidden;");
 logtime = new Date(); /*adds the first line to the log*/
 log.insertAdjacentHTML("afterend",`<p>> <span>${logtime.getHours()}:${logtime.getMinutes()}:${logtime.getSeconds()}</span> 
         LOG SESSION START ${logtime.getDate()}-${logtime.getMonth()+1}-${logtime.getFullYear()}
@@ -49,13 +49,13 @@ function logoutUser(){
         <br># USER: ${username}</p>`);
     userInput.value = "";
     passInput.value = "";
-    document.body.classList.add("login_open");
+    document.body.classList.add("popup_open");
     document.getElementById("login_visibility").classList.remove("hidden");
     document.getElementById("blur_visibility").classList.remove("hidden");
     clearLabel();
 }
 function debugCloseLogin(){
-    document.body.classList.remove("login_open");
+    document.body.classList.remove("popup_open");
     document.getElementById("usernameLabel").innerHTML = "DEBUG";
     document.getElementById("positionLabel").innerHTML = "DEBUG";
     document.getElementById("realnameLabel").innerHTML = "DEBUG";
@@ -77,6 +77,7 @@ else{
     document.getElementById("blur_visibility").classList.add("hidden");
 }
 /*------------------MAIN FUNTION------------------*/
+document.getElementById("popupEmployee").classList.add("hidden");
 document.getElementById("loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
     loginAuth();
@@ -96,7 +97,7 @@ function loginAuth(){
         console.log("> Attatched password", password);
         if (users.some(checkForUser)){
             console.log("# LOGIN AUTHORISED");
-            document.body.classList.remove("login_open");
+            document.body.classList.remove("popup_open");
             document.getElementById("login_visibility").classList.add("hidden");
             document.getElementById("blur_visibility").classList.add("hidden");
             isLoggedIn = true;
@@ -150,5 +151,28 @@ function checkForUser(arrUser){ /*Im rlly happy i got the object data working th
     }
     else{
         console.log("> No user");
+    }
+}
+
+function employeesShow(){
+    users.forEach(employeesList)
+    document.body.classList.add("popup_open");
+    document.getElementById("blur_visibility").classList.remove("hidden");
+    document.getElementById("popupEmployee").classList.remove("hidden");
+}
+function employeesList(arrUser){
+    if (arrUser.pos === "Admin"){
+        document.getElementById("employeeList").insertAdjacentHTML("beforeend", `<tr><th>USER: </th><td>${arrUser.name}</td><th>REAL NAME: </th><td>${arrUser.realname}</td><th>POSITION: </th><td>${arrUser.pos}</td><th>STATUS: </th><td>${arrUser.status}</td></tr>`);
+    }
+    else{
+        document.getElementById("employeeList").insertAdjacentHTML("beforeend", `<tr><th>USER: </th><td>${arrUser.name}</td><th>REAL NAME: </th><td>${arrUser.realname}</td><th>POSITION: </th><td>${arrUser.pos}</td><th>STATUS: </th><td>${arrUser.status}</td></tr>`);
+    }
+}
+function popupEmployeeClose(){
+    document.getElementById("blur_visibility").classList.add("hidden");
+    document.getElementById("popupEmployee").classList.add("hidden");
+    document.body.classList.remove("popup_open");
+    while (document.getElementById("employeeList").firstChild) {
+        document.getElementById("employeeList").removeChild(document.getElementById("employeeList").firstChild);
     }
 }

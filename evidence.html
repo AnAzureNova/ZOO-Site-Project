@@ -45,6 +45,14 @@
 <!----------------------------------------------------------------------------------------------------------->
 <!--MAIN-->
     <main>
+        <div class="evidence_popups">
+            <div id="popupEmployee">
+                <button onclick="popupEmployeeClose();">ZPĚT</button>
+                <h1>SEZNAM ZAMĚSTNANCŮ</h1>
+                <table id="employeeList"></table>
+            </div>
+        </div>
+
         <section>
             <div class="evidence_main">
                 <div class="evidence_main_header">
@@ -54,7 +62,7 @@
                 <hr>
                 <div class="evidence_main_buttons">
                     <div>
-                        <button id="employeesButton">ZÁZNAMY ZAMĚSTNANCŮ</button><br>
+                        <button id="employeesButton" onclick="employeesShow();">ZÁZNAMY ZAMĚSTNANCŮ</button><br>
                         <label for="employeesButton">Zobrazení a úprava uživatelů - přístup povolen pouze pro správce systému.</label>
                     </div>
                     <div>
