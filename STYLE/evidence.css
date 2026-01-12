@@ -43,7 +43,6 @@ h2{
     background-color: #131313;
     border: solid white 2px;
     border-radius: 20px;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
     z-index: 100;
 }
 .login_form{
