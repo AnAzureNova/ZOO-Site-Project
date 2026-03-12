@@ -4,13 +4,35 @@ html, body {
     min-height: 100%;
 }
 body {
-    background-image:
-        linear-gradient(#000, #00000000),
-        url("../STYLE/resources/images/lion1.jpg");
+    position: relative;
+    background-color: #000;
+}
 
-    background-size: contain;
+.bg_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vw;
+    z-index: -1;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
+}
+.bg_image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#000, #00000000);
+}
+.bg_overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to top, #000000 0%, transparent 15%);
 }
 .main_event_big{
     display: flex;

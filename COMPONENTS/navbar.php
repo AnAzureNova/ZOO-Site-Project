@@ -1,0 +1,102 @@
+<header>
+    <nav>
+        <!--NAVIGATION BAR (GLOBAL)-->
+        <div class="logo">
+                <a href="/index.php"></a>
+        </div>
+        <div class="navbar_dropdownDiv">
+            <!--INFO DROPDOWN-->
+            <div class="dropdown_Info" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>Informace pro návštěvníky</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href="/SITE/Vstupne.php"><span class="pointer">◦</span>Ceník a vstupné</a>
+                    <a href=""><span class="pointer">◦</span>Mapa ZOO</a>
+                    <a href=""><span class="pointer">◦</span>Návštěvní řád</a>
+                    <a href=""><span class="pointer">◦</span>Často kladené otázky</a>
+                </div>
+            </div>
+            <!--EXPOZICE DROPDOWN-->
+            <div class="dropdown_Expozice" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>Naše zvířata a expozice</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href=""><span class="pointer">◦</span>Expozice</a>
+                    <a href=""><span class="pointer">◦</span>Výstavy</a>
+                </div>
+            </div>
+            <!--NOVINKY DROPDOWN-->
+            <div class="dropdown_Novinky" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>Novinky</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href=""><span class="pointer">◦</span>Aktuality</a>
+                    <a href=""><span class="pointer">◦</span>Akce a programy</a>
+                </div>
+            </div>
+                <!--PROŠKOLY DROPDOWN-->
+            <div class="dropdown_Proskoly" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>Pro školy</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href=""><span class="pointer">◦</span>Přednášky a výukové programy</a>
+                    <a href=""><span class="pointer">◦</span>Kroužky</a>
+                    <a href=""><span class="pointer">◦</span>Kvízy o zvířatech</a>
+                </div>
+            </div>
+                <!--ADOPCE DROPDOWN-->
+            <div class="dropdown_Adopce" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>Podpořte nás</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href=""><span class="pointer">◦</span>Adopce zvířat</a>
+                    <a href=""><span class="pointer">◦</span>Sponzoři</a>
+                    <a href=""><span class="pointer">◦</span>Dobrovolnictví</a>
+                    <a href=""><span class="pointer">◦</span>Veřejné sbírky</a>
+                </div>
+            </div>
+                <!--ESHOP DROPDOWN-->
+            <div class="dropdown_Eshop" id="dropdown">
+                <div class="dropdownTrigger">
+                    <h4><span class="arrow">➤</span>E-Shop</h4>
+                </div>
+                <div class="dropdownContents">
+                    <a href=""><span class="pointer">◦</span>Online vstupenky</a>
+                    <a href=""><span class="pointer">◦</span>Dárkové poukazy</a>
+                    <a href=""><span class="pointer">◦</span>Suvenýry</a>
+                </div>
+            </div>
+            <!--LANGUAGE SWITCHER DROPDOWN MENU-->
+            <div class="lang_switch">
+                <img id="flag" src="STYLE/resources/icons/czech-republic.png" alt="CZdropdown">
+                <div class="lang_dropdown">
+                    <a href="?lang=cz">
+                        <img src="STYLE/resources/icons/czech-republic.png" alt="CZ">
+                        <span>Čeština</span>
+                    </a>
+                    <a href="?lang=en">
+                        <img src="STYLE/resources/icons/united-kingdom.png" alt="EN">
+                        <span>English</span>
+                    </a>
+                    <a href="?lang=de">
+                        <img src="STYLE/resources/icons/germany.png" alt="DE">
+                        <span>Deutch</span>
+                    </a>
+                    <a href="?lang=nl">
+                        <img src="STYLE/resources/icons/netherlands.png" alt="NL">
+                        <span>Nederlands</span>
+                    </a>
+                    <a href="?lang=pl">
+                        <img src="STYLE/resources/icons/poland.png" alt="PL">
+                        <span>Polski</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -6,7 +6,7 @@
     try {
         $db = new PDO($dsn, $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "Success";
+        #echo "<h1>Success</h1><br><br><br>";
     }
     catch (PDOException $e){
         echo "Unable to connect DB: ". $e->getMessage();
@@ -28,5 +28,14 @@
         $stmt->execute();
 
         return $stmt->fetchALL(PDO::FETCH_ASSOC);
+    }
+
+    function getCurrMotd():mixed{
+        global $db;
+        $sql = "SELECT * FROM motd WHERE iscurrent = 1";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 ?>
