@@ -53,27 +53,26 @@
                 <h2>Další novinky</h2>
             </div>
             <div class="main_event_sub">
-                <article>
-                    <p>img here</p>
-                    <h3>TITLE</h3>
-                    <h5>Date published</h5>
-                    <p>Info contents here</p>
-                    <a>View more button</a>
-                </article>
-                <article>
-                    <p>img here</p>
-                    <h3>TITLE</h3>
-                    <h5>Date published</h5>
-                    <p>Info contents here</p>
-                    <a>View more button</a>
-                </article>
-                <article>
-                    <p>img here</p>
-                    <h3>TITLE</h3>
-                    <h5>Date published</h5>
-                    <p>Info contents here</p>
-                    <a>View more button</a>
-                </article>
+                <?php
+                    $events = getALL("events_registry", "id DESC", 3);
+                    $count = count($events);
+                    for ($i = 0; $i < 3; $i++) {
+                        if ($i < $count) {
+                            echo "<article>";
+                            echo "<p>".$events[$i]["image"]."</p>";
+                            echo "<h3>".$events[$i]["title"]."</h3>";
+                            echo "<h5>".$events[$i]["date_published"]."</h5>";
+                            echo "<p>".$events[$i]["description"]."</p>";
+                            echo "<a href='".$events[$i]["linktoredirect"]."'>View more</a>";
+                            echo "</article>";
+                        }
+                        else{
+                            echo "<article>";
+                            echo "<h3>No event</h3>";
+                            echo "</article>";
+                        }
+                    }
+                ?>
             </div>
             <div class="main_event_sub_extra">
                 <a href="" id="redirectButton">VŠECHNY NOVINKY</a>

@@ -21,9 +21,15 @@
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    function getALL($table): array{
+    function getALL($table, $orderBy = null, $limit = null): array{
         global $db;
         $sql = "SELECT * FROM $table";
+        if ($orderBy){
+            $sql.=" ORDER BY $orderBy";
+        }
+        if ($limit){
+            $sql.=" LIMIT $limit";
+        }
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
