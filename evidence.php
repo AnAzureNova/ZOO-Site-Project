@@ -1,4 +1,3 @@
-<!--samotný informační systém, propojit s hlavní stránkou TBA-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,101 +7,71 @@
     <link rel="icon" href="STYLE/resources/icons/wrench.png" type="image/x-icon">
     <title>INFORMAČNÍ SYSTÉM Zoo Brno 2</title>
 </head>
-<body>
-<!----------------------------------------------------------------------------------------------------------->
-<!--LOGIN WINDOW-->
-    <div class="backdrop" id="blur_visibility"></div>
-    <div class="evidence_login_window" id="login_visibility">
-        <h1>Informační a evidenční systém ZOO přihlášení</h1>
-        <p>Prosím zadejte své uživatelské jméno a heslo:</p>
-        <div class="login_form" id="loginForm">
-            <input type="text" id="loginUser" placeholder="UŽIVATELSKÉ JMÉNO" autocomplete="off" onchange="clearLabel();">
-            <input type="password" id="loginPass" placeholder="HESLO" autocomplete="off" onchange="clearLabel();">
-            <span id="loginStatus"></span>
-            <button id="loginButton" type="submit" onclick="loginAuth();">PŘÍHLÁSIT</button>
-        </div>
-        <a href="index.php">Zpět na hlavní stránku</a>
-        <p style="color: rgb(31, 31, 31);" onclick="debugCloseLogin();">DEBUG.closewindow</p>
-        <!--DEBUG CLOSE LOGIN DELETE LATER-->
-    </div>
-<!----------------------------------------------------------------------------------------------------------->
-<!--NAVBAR-->
-    <nav>
-        <div class="evidence_header">
-            <div class="logo">
-            </div>
-            <h1>Informační a evidenční systém</h1>
-        </div>
-        <div class="user_dropdown">
-            <img id="usericon" src="STYLE/resources/icons/user.png">
-            <div class="dropdownContents">
-                <p>UŽIVATEL: <span id="usernameLabel">unknown</span></p>
-                <p>POZICE: <span id="positionLabel">unknown</span></p>
-                <button onclick="logoutUser();">ODHLÁSIT</button>
-            </div>
-        </div>
-    </nav>
-<!----------------------------------------------------------------------------------------------------------->
-<!--MAIN-->
-    <main>
-        <div class="evidence_popups">
-            <div id="popupEmployee">
-                <button onclick="popupEmployeeClose();">ZPĚT</button>
-                <h1>SEZNAM ZAMĚSTNANCŮ</h1>
-                <table id="employeeList"></table>
-            </div>
-        </div>
+<?php
+    session_start();
+    include "DATABASE/database.php";
 
-        <section>
-            <div class="evidence_main">
-                <div class="evidence_main_header">
-                    <img src="STYLE/resources/icons/profile.png">
-                    <h2>Vítejte zpět, <span id="realnameLabel">unknown</span>!</h2>
-                </div>
-                <hr>
-                <div class="evidence_main_buttons">
-                    <div>
-                        <button id="employeesButton" onclick="employeesShow();">ZÁZNAMY ZAMĚSTNANCŮ</button><br>
-                        <label for="employeesButton">Zobrazení a úprava uživatelů - přístup povolen pouze pro správce systému.</label>
-                    </div>
-                    <div>
-                        <button id="visitorsButton">ZÁZNAMY NÁVŠTĚVNÍKŮ</button><br>
-                        <label for="visitorsButton">Evidence návštěvníků - záznamy zakoupených vstupenek a vstupy do ZOO</label>
-                    </div>
-                    <div>
-                        <button id="animalsButton">SPRÁVA ZVÍŘAT</button><br>
-                        <label for="animalsButton">Evidence zvířat a expozic - seznam a správa  registrovaných zvýřat</label>
-                    </div>
-                    <div>
-                        <button id="feedingtimesButton">KRMENÍ ZVÍŘAT</button><br>
-                        <label for="feedingtimesButton">Doby krmení zvířat - nastavení dob krmení pro jednotlivé expozice</label>
-                    </div>
-                    <div>       
-                        <button id="openingsButton">OTEVÍRACÍ DOBA</button><br>
-                        <label for="openingsButton">Doby otevírání - správa otevírací a zavírací doby areálu</label>
-                    </div>
-                    <div>
-                        <button id="shoprecsButton">ZÁZNAMY E-SHOPU</button><br>
-                        <label for="shoprecsButton">Záznamy eshopu</label>
-                    </div>
-                </div>
-            </div>
-            <div class="evidence_main_log">
-                <div id="log">
-                </div>
-            </div>
-        </section>
-    </main>
-<!----------------------------------------------------------------------------------------------------------->
-<!--FOOTER-->
-    <footer>
-        <div class="footer_bottomText">
-            <p>© ZOO Brno 2 2026 | Management system</p> <!--DEBUG access to management | delete later on-->
-            <p>Tato stránka je součástí školního projektu; všechen obsah stránky je domyšlený nebo spadá pod <a href="https://www.zoobrno.cz" target="_blank">© ZOO Brno 2026</a></p>
-        </div>
-    </footer>
-    <script src="SCRIPTS/global.js"></script>
-    <script src="SCRIPTS/connection.js"></script>
-    <script src="SCRIPTS/login.js"></script>
+    if (isset($_GET["action"]) && $_GET["action"] === "logout") {
+        session_destroy();
+        header("Location: /evidence.php");
+        exit();
+    }
+?>
+<body>
+<?php
+    include "COMPONENTS/evidence/evidenceHeader.php";
+?>
+<main>
+    <aside class="evidence_sideNav">
+        <a href="evidence.php?page=home">HLAVNÍ STRÁNKA</a>
+        <a href="evidence.php?page=management">MANAGEMENT ZOO</a>
+        <a href="evidence.php?page=animals">EVIDENCE ZVÍŘAT</a>
+        <a href="evidence.php?page=exclosures">EXPOZICE</a>
+        <a href="evidence.php?page=events">AKCE A PROGRAMY</a>
+        <a href="evidence.php?page=eshop">ZÁZNAMY E-SHOPU</a>
+        <a href="evidence.php?page=visitorlog">PŘEHLED NÁVŠTĚVNÍKŮ</a>
+        <a href="evidence.php?page=employeelog">PŘEHLED ZAMĚSTNANCŮ</a>
+        <a href="evidence.php?page=syslog">HISTORIE SYSTÉMU</a>
+    </aside>
+    <section class="evidence_main">
+        <?php
+            #safeguard, otevře login komponent pokud uživatel není přihlášen
+            if (!isset($_SESSION["evidence_user"])) {
+                include "COMPONENTS/evidence/login.php";
+                exit();
+            }
+            $page = $_GET["page"] ?? "home";
+            switch ($page){
+                case "management":
+                    include "COMPONENTS/evidence/management.php";
+                    break;
+                case "animals":
+                    include "COMPONENTS/evidence/animals.php";
+                    break;
+                case "exclosures":
+                    include "COMPONENTS/evidence/exclosures.php";
+                    break;
+                case "events":
+                    include "COMPONENTS/evidence/events.php";
+                    break;
+                case "eshop":
+                    include "COMPONENTS/evidence/eshop.php";
+                    break;
+                case "visitorlog":
+                    include "COMPONENTS/evidence/visitorlog.php";
+                    break;
+                case "employeelog":
+                    include "COMPONENTS/evidence/employeelog.php";
+                    break;
+                case "syslog":
+                    include "COMPONENTS/evidence/syslog.php";
+                    break;
+                default:
+                    include "COMPONENTS/evidence/home.php";
+                    break;
+            }
+        ?>
+    </section>
+</main>
 </body>
 </html>

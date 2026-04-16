@@ -44,4 +44,13 @@
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    function loginEmployee($username, $password): mixed {
+        global $db;
+        $sql = "SELECT * FROM employees_registry WHERE web_username = :username AND web_password = :password";
+        $stmt = $db->prepare($sql);
+        $stmt->execute(['username' => $username, 'password' => $password]);
+        $employee = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $employee ?: false;
+    }
 ?>
