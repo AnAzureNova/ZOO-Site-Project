@@ -72,5 +72,21 @@ main{
 .evidence_main{
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 20px 50px;
+}
+
+.syslog{
+    background-color: #1d1d1d;
+    height: 70vh;
+}
+.syslog_entries {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+.syslog_entry {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-family: monospace;
 }

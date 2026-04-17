@@ -6,11 +6,13 @@
 
         if ($employee) {
             $_SESSION["evidence_user"] = ["id"=>$employee["id"], "username" => $employee["web_username"], "firstname" => $employee["firstname"], "surname" => $employee["surname"], "occupation" => $employee["occupation"],];
+            logAction("login", $_SESSION["evidence_user"], "via browser");
             header("Location: /evidence.php");
             exit();
         } 
         else{
             $loginError = "Nesprávné přihlašovací údaje.";
+            logAction("failed login attempt", null);
         }
     }
 ?>
@@ -18,7 +20,6 @@
 <div class="evidence_login">
     <div class="login_box">
         <h1>PŘIHLÁŠENÍ</h1>
-        <hr>
         <?php 
             if(!empty($loginError)){
                 echo "<p class='login_error'>".htmlspecialchars($loginError)."</p>";

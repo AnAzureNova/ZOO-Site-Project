@@ -9,9 +9,12 @@
 </head>
 <?php
     session_start();
-    include "DATABASE/database.php";
+    include "DATABASE/database.php"; #databáze
+    include "COMPONENTS/evidence/actionlog.php"; #funkce pro historii systému
 
     if (isset($_GET["action"]) && $_GET["action"] === "logout") {
+        # pokud je redirect ?action=logout, vypíše logout action do logu a odhlásí uživatele
+        logAction("logout", $_SESSION["evidence_user"], "via browser");
         session_destroy();
         header("Location: /evidence.php");
         exit();
@@ -41,6 +44,7 @@
                 exit();
             }
             $page = $_GET["page"] ?? "home";
+            # změní komponenty podle ?page
             switch ($page){
                 case "management":
                     include "COMPONENTS/evidence/management.php";
