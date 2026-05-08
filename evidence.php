@@ -1,25 +1,42 @@
+<?php
+    session_start();
+    include "DATABASE/database.php";
+    include "COMPONENTS/evidence/log/actionlog.php";
+    include "COMPONENTS/evidence/debug/PHP-JS_log.php";
+
+    # logout uživatele
+    if (isset($_GET["action"]) && $_GET["action"] === "logout") {
+        logAction("logout", $_SESSION["evidence_user"] ?? null, "via browser");
+        session_destroy();
+        header("Location: /evidence.php");
+        exit();
+    }
+
+    # timeout na 15 minut bez aktivity
+    $timeout_time = 900;
+    if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) > $timeout_time) {
+        console_log("> FORCED LOGOUT");
+        logAction("session_timeout", $_SESSION["evidence_user"], "due to inactivity");
+        session_destroy();
+        header("Location: /evidence.php");
+        exit();
+    }
+    console_log("> DEBUG :: TIME TILL TIMEOUT " . gmdate("i:s", $timeout_time - (time() - ($_SESSION["last_activity"] ?? time())))); #pouze debug do konzole jak dlouho než uživatel dostane timeout
+    $_SESSION["last_activity"] = time();
+
+    # POST handler pro komponenty
+    include "COMPONENTS/evidence/handlers/post_handler.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="STYLE/evidence.css">
+    <link rel="stylesheet" href="STYLE/evidence_animals.css">
     <link rel="icon" href="STYLE/resources/icons/wrench.png" type="image/x-icon">
     <title>INFORMAČNÍ SYSTÉM Zoo Brno 2</title>
 </head>
-<?php
-    session_start();
-    include "DATABASE/database.php"; #databáze
-    include "COMPONENTS/evidence/actionlog.php"; #funkce pro historii systému
-
-    if (isset($_GET["action"]) && $_GET["action"] === "logout") {
-        # pokud je redirect ?action=logout, vypíše logout action do logu a odhlásí uživatele
-        logAction("logout", $_SESSION["evidence_user"], "via browser");
-        session_destroy();
-        header("Location: /evidence.php");
-        exit();
-    }
-?>
 <body>
 <?php
     include "COMPONENTS/evidence/evidenceHeader.php";
@@ -38,19 +55,23 @@
     </aside>
     <section class="evidence_main">
         <?php
-            #safeguard, otevře login komponent pokud uživatel není přihlášen
+            # donutí načíst login komponent pokud uživatel není přihlášen
             if (!isset($_SESSION["evidence_user"])) {
                 include "COMPONENTS/evidence/login.php";
                 exit();
             }
             $page = $_GET["page"] ?? "home";
-            # změní komponenty podle ?page
             switch ($page){
                 case "management":
                     include "COMPONENTS/evidence/management.php";
                     break;
                 case "animals":
-                    include "COMPONENTS/evidence/animals.php";
+                    if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
+                        include "COMPONENTS/evidence/animals_edit.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/animals.php";
+                    }
                     break;
                 case "exclosures":
                     include "COMPONENTS/evidence/exclosures.php";
@@ -68,7 +89,7 @@
                     include "COMPONENTS/evidence/employeelog.php";
                     break;
                 case "syslog":
-                    include "COMPONENTS/evidence/syslog.php";
+                    include "COMPONENTS/evidence/log/syslog.php";
                     break;
                 default:
                     include "COMPONENTS/evidence/home.php";
@@ -77,5 +98,6 @@
         ?>
     </section>
 </main>
+<script src="SCRIPTS/select.js"></script>
 </body>
 </html>

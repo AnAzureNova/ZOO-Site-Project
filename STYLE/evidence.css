@@ -6,9 +6,20 @@
     font-family: "DINPro";
     src: url("resources/fonts/DINPro-Medium_13936.woff") format("woff");
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background: #1d1d1d;
+}
+::-webkit-scrollbar-thumb{
+    background: #ffffff;
+    border-radius: 5px;
+    height: 50%;
+}
 body{
     color: #fff;
-    background-color: #3b3b3b;
+    background-color: #303030;
     font-family: Comfortaa;
     margin: 0;
     padding: 0;
@@ -42,16 +53,16 @@ header div{
     padding: 0 30px;
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 20% auto;
+    min-height: 100vh;
 }
 .evidence_sideNav{
     display: flex;
     flex-direction: column;
     background-color: #2b2b2b;
-    height: 90vh;
-    gap: 5px;
+    min-height: 100%;
     padding: 0 0;
 }
 .evidence_sideNav a{
@@ -64,11 +75,9 @@ main{
     font-size: 1.3rem;
     padding: 0 50px;
 }
-.evidence_sideNav a:hover{
-    background-color: #3b3b3b;
-    transition: cubic-bezier(0.39, 0.575, 0.565, 1) 300ms;
-    padding-left: 30px;
-}
+.evidence_sideNav a.active {color: #ffc272; padding-left: 40px;}
+.evidence_sideNav a:hover{background-color: #303030;transition: cubic-bezier(0.39, 0.575, 0.565, 1) 300ms; padding-left: 40px;}
+
 .evidence_main{
     display: flex;
     flex-direction: column;
@@ -76,17 +85,45 @@ main{
 }
 
 .syslog{
-    background-color: #1d1d1d;
-    height: 70vh;
+    height: 80vh; 
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: white #1d1d1d;
+    cursor: default;
+    filter: drop-shadow(2px 18px 44px #0000006e);
 }
 .syslog_entries {
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
+    font-size: 0.7rem;
+    background-color: #1d1d1d;
 }
-.syslog_entry {
+.syslog_input{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #1d1d1d;
+    padding: 10px 30px;
+}
+.syslog_input input{
+    background-color: #1d1d1d;
+    color: #fff;
+    font-family: monospace;
+    width: 100%;
+    border: none;
+}
+.syslog_entry {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    background-color: #1d1d1d;
     gap: 10px;
     font-family: monospace;
+    font-size: 0.7rem;
 }
+.syslog_entry:hover{background-color: #303030;}
+.timestamp { color: #888; white-space: nowrap; text-overflow: ellipsis;}
+.syslog_user { white-space: nowrap; text-overflow: ellipsis;}
+.syslog_action { white-space: nowrap; text-overflow: ellipsis;}
+.syslog_detail { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}

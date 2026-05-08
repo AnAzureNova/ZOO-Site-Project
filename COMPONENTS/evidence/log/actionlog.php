@@ -1,6 +1,6 @@
 <?php
-    define("SYSLOG_PATH", __DIR__ . "/log/zoo.syslog");
-    define("SYSLOG_MAX_LINES", 100);
+    define("SYSLOG_PATH", __DIR__ . "/zoo.syslog");
+    define("SYSLOG_MAX_LINES", 500);
 
     # FUnkce pro zapisování akcí do historie logu
     function logAction($action, $cur_user = null, $detail = ""): void {

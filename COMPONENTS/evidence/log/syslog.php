@@ -1,6 +1,6 @@
 <?php
-    define("SYSLOG_PATH", __DIR__ . "/log/zoo.syslog");
-    define("SYSLOG_DISPLAY_LIMIT", 50);
+    define("SYSLOG_PATH", __DIR__ . "/zoo.syslog");
+    define("SYSLOG_DISPLAY_LIMIT", 150);
 
     if (file_exists(SYSLOG_PATH)){
         # pokud soubor existuje tak z něho vytáhne všechen text (logtext) a roseká ho na řádky do pole (lines) pod určeným limitem
@@ -10,8 +10,14 @@
     else{
         $lines = [];
     }
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST["log_input"])){
+        $input = $_POST["log_input"];
+        logAction("console_report", $_SESSION["evidence_user"], $input);
+        header("Location: /evidence.php?page=syslog");
+        exit();
+    }
 ?>
-<h1>ZÁZNAM SYSTÉMU</h1>
 <div class="syslog">
     <div class="syslog_entries">
         <?php
@@ -28,12 +34,16 @@
                     [$action, $detail] = array_pad(explode(" | ", $other, 2), 2, ""); # rozdělí other na příslušné parametry
 
                     echo "<div class='syslog_entry'>";
-                    echo "<span class='timestamp'>> [".htmlspecialchars($timestamp)."] </span>
-                        <span>".htmlspecialchars($user)."</span>
-                        <span>".htmlspecialchars($action)."</span>".($detail ? "<span class='syslog_detail'> ".htmlspecialchars($detail)."</span>" : "");
+                    echo "<span class='timestamp'>[".htmlspecialchars($timestamp)."] </span>
+                        <span class='syslog_user'>".htmlspecialchars($user)."</span>
+                        <span class='syslog_action'>".htmlspecialchars($action)."</span>".($detail ? "<span class='syslog_detail' title='".htmlspecialchars($detail)."'>".htmlspecialchars($detail)."</span>" : "");
                     echo "</div>";
                 }
             }
         ?>
     </div>
 </div>
+<form method="post" action="" class="syslog_input">
+    <input type="text" placeholder="> ENTER REPORT" name="log_input" id="log_input">
+    <button type="submit">>>></button>
+</form>

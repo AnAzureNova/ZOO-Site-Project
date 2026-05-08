@@ -1,6 +1,103 @@
-[2026-04-17 09:50:42] [ADMIN] logout | via browser
-[2026-04-17 09:50:45] [ADMIN] login | via browser
-[2026-04-17 09:51:52] [ADMIN] logout | via browser
-[2026-04-17 09:51:54] [SYSTEM] failed login attempt
-[2026-04-17 09:51:58] [SYSTEM] failed login attempt
-[2026-04-17 09:52:02] [ADMIN] login | via browser
+[2026-04-27 06:52:00] [ADMIN] login | via browser
+[2026-04-29 12:04:19] [ADMIN] login | via browser
+[2026-05-06 07:55:58] [ADMIN] login | via browser
+[2026-05-06 10:00:41] [ADMIN] login | via browser
+[2026-05-06 10:05:13] [ADMIN] logout | via browser
+[2026-05-06 10:05:17] [SYSTEM] session timeout
+[2026-05-06 10:05:29] [SYSTEM] session timeout
+[2026-05-06 10:05:32] [ADMIN] login | via browser
+[2026-05-06 10:06:42] [ADMIN] session timeout
+[2026-05-06 10:06:46] [SYSTEM] session timeout
+[2026-05-06 10:06:56] [SYSTEM] session timeout
+[2026-05-06 10:06:59] [ADMIN] login | via browser
+[2026-05-06 10:07:34] [ADMIN] session timeout
+[2026-05-06 10:07:38] [ADMIN] login | via browser
+[2026-05-06 10:08:19] [ADMIN] session timeout | due to inactivity
+[2026-05-06 10:08:23] [ADMIN] login | via browser
+[2026-05-06 10:08:31] [ADMIN] session timeout | due to inactivity
+[2026-05-06 10:08:39] [SYSTEM] session timeout | due to inactivity
+[2026-05-06 10:08:43] [ADMIN] login | via browser
+[2026-05-06 10:08:59] [ADMIN] session timeout | due to inactivity
+[2026-05-06 10:09:03] [ADMIN] login | via browser
+[2026-05-06 10:58:58] [ADMIN] session timeout | due to inactivity
+[2026-05-06 10:59:03] [ADMIN] login | via browser
+[2026-05-06 10:59:32] [ADMIN] session timeout | due to inactivity
+[2026-05-06 10:59:39] [ADMIN] login | via browser
+[2026-05-06 11:04:10] [ADMIN] logout | via browser
+[2026-05-06 11:04:17] [ADMIN] login | via browser
+[2026-05-06 11:11:56] [ADMIN] console input | 
+[2026-05-06 11:12:02] [ADMIN] console input | 
+[2026-05-06 11:12:07] [ADMIN] console input | 
+[2026-05-06 11:13:14] [ADMIN] console input | test
+[2026-05-06 11:13:20] [ADMIN] console input | user input test
+[2026-05-06 11:13:23] [ADMIN] console input
+[2026-05-06 11:13:25] [ADMIN] console input
+[2026-05-06 11:13:52] [ADMIN] console input
+[2026-05-06 11:13:59] [ADMIN] console input | broken
+[2026-05-06 11:14:12] [ADMIN] console input | curious
+[2026-05-06 11:15:35] [ADMIN] console input | flood
+[2026-05-06 11:16:27] [ADMIN] console input | what
+[2026-05-06 11:21:39] [ADMIN] console input | thing
+[2026-05-06 11:22:50] [ADMIN] console input | okay it works now sorta
+[2026-05-06 11:23:35] [ADMIN] console message ::  | test
+[2026-05-06 11:24:09] [ADMIN] console report ::  | nvm okay now it should be fine
+[2026-05-06 11:24:15] [ADMIN] console report ::  | yeah
+[2026-05-06 11:24:25] [ADMIN] console report ::  | test
+[2026-05-07 07:52:40] [ADMIN] login | via browser
+[2026-05-07 07:54:02] [ADMIN] console report ::  | Console output example 1
+[2026-05-07 07:57:17] [ADMIN] console report :: 
+[2026-05-07 07:57:59] [ADMIN] console report ::  | Admin
+[2026-05-07 07:58:16] [ADMIN] logout | via browser
+[2026-05-08 09:47:57] [ADMIN] login | via browser
+[2026-05-08 10:04:51] [ADMIN] session timeout | due to inactivity
+[2026-05-08 10:04:55] [ADMIN] login | via browser
+[2026-05-08 11:03:48] [ADMIN] login | via browser
+[2026-05-08 11:30:17] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:30:27] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:31:21] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:31:57] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:32:24] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:33:48] [ADMIN] animal_created | id: 11, name: Lev konžský
+[2026-05-08 11:34:40] [ADMIN] animal_updated | id: 11, name: Lev konžský
+[2026-05-08 11:35:47] [ADMIN] animal_updated | id: 11, name: Lev konžský
+[2026-05-08 11:36:03] [ADMIN] animal_updated | id: 11, name: Lev konžský
+[2026-05-08 11:44:43] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:52:31] [ADMIN] animal_updated | id: 10, name: Liška polární
+[2026-05-08 11:56:48] [ADMIN] animal_updated | id: 10, změny: weight: '5' → '6', amount: '5' → '6'
+[2026-05-08 11:56:52] [ADMIN] animal_updated | id: 10, žádné změny
+[2026-05-08 11:57:46] [ADMIN] animal_updated | IF: 10, CHANGES: amount: '6' → '5'
+[2026-05-08 12:05:33] [ADMIN] logout | via browser
+[2026-05-08 12:05:39] [ADMIN] login | via browser
+[2026-05-08 12:06:16] [ADMIN] logout | via browser
+[2026-05-08 12:06:21] [ADMIN] login | via browser
+[2026-05-08 12:06:37] [ADMIN] animal_updated | ID: 11, CHANGES: amount: '2' → '3'
+[2026-05-08 12:34:22] [ADMIN] session_timeout | due to inactivity
+[2026-05-08 12:34:27] [ADMIN] login | via browser
+[2026-05-08 13:34:13] [ADMIN] animal_updated | id: 11, NO CHANGES
+[2026-05-08 13:35:31] [ADMIN] animal_updated | ID: 11, CHANGES: weight: '120' → '0', height: '2.5' → '0'
+[2026-05-08 13:36:06] [ADMIN] animal_updated | id: 11, NO CHANGES
+[2026-05-08 13:36:51] [ADMIN] animal_updated | ID: 11, CHANGES: weight: '0' → '0dsa'
+[2026-05-08 13:37:19] [ADMIN] animal_updated | ID: 11, CHANGES: weight: '0dsa' → '105 - 240 kg', height: '0' → '2,3 - 3,1 m'
+[2026-05-08 13:37:53] [ADMIN] animal_updated | ID: 11, CHANGES: lifespan: '18' → '18 - 30'
+[2026-05-08 13:38:36] [ADMIN] animal_updated | ID: 11, CHANGES: lifespan: '18 - 30' → '18 - 30 let'
+[2026-05-08 13:38:44] [ADMIN] animal_updated | id: 11, NO CHANGES
+[2026-05-08 13:39:48] [ADMIN] animal_updated | ID: 10, CHANGES: weight: '6' → '5-9 kg'
+[2026-05-08 13:40:10] [ADMIN] animal_updated | ID: 10, CHANGES: weight: '5-9 kg' → '5 - 9 kg', height: '28' → '28 - 30 cm'
+[2026-05-08 13:40:18] [ADMIN] animal_updated | ID: 10, CHANGES: lifespan: '3' → '3 - 16 let'
+[2026-05-08 13:55:07] [ADMIN] animal_updated | ID: 10, CHANGES: diet: 'Lumíci, zajíci, ptáci, vejce' → 'Lumíci, zajíci, ptáci, vejce?'
+[2026-05-08 13:55:20] [ADMIN] animal_updated | ID: 10, CHANGES: diet: 'Lumíci, zajíci, ptáci, vejce?' → 'Lumíci, zajíci, ptáci, vejce'
+[2026-05-08 14:11:59] [ADMIN] animal_created | id: 12, name: Kapybara
+[2026-05-08 14:12:18] [ADMIN] animal_updated | ID: 12, CHANGES: name_latin: '' → 'Hydrochoerus hydrochaeris'
+[2026-05-08 14:13:45] [ADMIN] animal_updated | ID: 12, CHANGES: classification: '' → 'Řád - Hlodavci (Rodentia) | Čeleď - Morčatovití (Caviidae)', habitat: '' → 'Pobřežní pásmo řeky', lifespan: '' → '4 - 12 let', weight: '' → '30 - 80 kg', height: '' → '50 - 60 cm'
+[2026-05-08 14:14:07] [ADMIN] animal_updated | ID: 12, CHANGES: location_of_origin: '' → 'Od Panamy až po severovýchodní Argentinu'
+[2026-05-08 14:14:15] [ADMIN] animal_updated | ID: 12, CHANGES: extninction_index: '0' → '1'
+[2026-05-08 14:14:22] [ADMIN] animal_updated | ID: 12, CHANGES: amount: '0' → '6'
+[2026-05-08 14:15:17] [ADMIN] animal_updated | ID: 12, CHANGES: image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi3.cn.cz%2F15%2F1724076590_P2024081904239.jpg&f=1&nofb=1&ipt=03a6069840c25931f4e23f7dec5a8dd0f865566394e8742ebf5f243ed25ec860', diet: '' → 'Vodní rostliny, tráva, kůra, výhonky, plody'
+[2026-05-08 14:15:34] [ADMIN] animal_updated | ID: 12, CHANGES: description: '' → 'Kapybara je největší hlodavec na světě. Miluje vodu a výborně plave a potápí se, pod vodou vydrží až pět minut. Když se chce ukrýt před predátory, skočí do vody. Dokáže ve vodě také spát, nos drží těsně nad vodní hladinou. Dospělá kapybara je schopná denně spořádat až 3,5 kg rostlinné potravy. Loví ji jaguár, ocelot, puma i anakonda.'
+[2026-05-08 14:33:59] [ADMIN] console report | Test report after style change
+[2026-05-08 14:34:23] [ADMIN] console_report | Nevermind
+[2026-05-08 14:35:18] [ADMIN] console_report | This should get rid of the bottom most line
+[2026-05-08 14:35:25] [ADMIN] console_report | Yup
+[2026-05-08 14:56:24] [ADMIN] logout | via browser
+[2026-05-08 14:56:29] [ADMIN] login | via browser
+[2026-05-08 14:56:41] [ADMIN] animal_updated | ID: 10, CHANGES: amount: '5' → '2'
