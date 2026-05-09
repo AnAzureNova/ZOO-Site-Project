@@ -5,6 +5,7 @@
         $page = $_GET["page"] ?? "home";
         $id = $_GET["id"] ?? null;
 
+        #--------------------------------------------------------------------------------------
         # tato část se zaměřuje na úpravu zvířat (management zvířat/animals page tab)
         if ($page === "animals") {
             $isNew = ($_GET["action"] ?? "") === "new";
@@ -12,7 +13,7 @@
             if ($formAction === "delete" && !$isNew && $id) {
                 $animal = get("animals_registry", $id);
                 deleteAnimal($id);
-                logAction("animal_deleted", $_SESSION["evidence_user"], "id: {$id}, name: " . ($animal["name"] ?? "?"));
+                logAction("animal_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: " . ($animal["name"] ?? "?"));
                 header("Location: /evidence.php?page=animals");
                 exit();
             }
@@ -59,6 +60,55 @@
                 updateAnimal($fields);
                 logAction("animal_updated", $_SESSION["evidence_user"], $detail);
                 echo "<script>window.location.href='/evidence.php?page=animals&action=edit&id={$id}';</script>";
+                exit();
+            }
+        }
+
+        #--------------------------------------------------------------------------------------
+        # tato část se zaměřuje na úpravu expozic (management expozic/exclosures page tab)
+        if ($page === "exclosures") {
+            $isNew = ($_GET["action"] ?? "") === "new";
+
+            if ($formAction === "delete" && !$isNew && $id) {
+                $exclosure = get("exclosures_registry", $id);
+                deleteExclosure($id);
+                logAction("exclosure_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: " . ($exclosure["name"] ?? "?"));
+                header("Location: /evidence.php?page=exclosures");
+                exit();
+            }
+
+            $fields = [
+                "name" => trim($_POST["name"] ?? ""),
+                "location" => trim($_POST["location"] ?? ""),
+                "description" => trim($_POST["description"] ?? ""),
+                "image" => trim($_POST["image"] ?? ""),
+            ];
+
+            if ($isNew) {
+                $newId = insertExclosure($fields);
+                logAction("exclosure_created", $_SESSION["evidence_user"], "ID: {$newId}, NAME: " . $fields["name"]);
+                echo "<script>window.location.href='/evidence.php?page=exclosures&action=edit&id={$newId}';</script>";
+                exit();
+            }
+            else{
+                $fields["id"] = $id;
+                
+                $old = get("exclosures_registry", $id);
+                $changed = [];
+                $trackFields = ["name", "location", "description", "image"];
+                
+                foreach ($trackFields as $field) {
+                    $oldVal = (string)($old[$field] ?? "");
+                    $newVal = (string)($fields[$field] ?? "");
+                    if ($oldVal !== $newVal) {
+                        $changed[] = "{$field}: '{$oldVal}' → '{$newVal}'";
+                    }
+                }
+                
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: " . implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                updateExclosure($fields);
+                logAction("exclosure_updated", $_SESSION["evidence_user"], $detail);
+                echo "<script>window.location.href='/evidence.php?page=exclosures&action=edit&id={$id}';</script>";
                 exit();
             }
         }

@@ -13,15 +13,15 @@
     }
 
     # timeout na 15 minut bez aktivity
-    $timeout_time = 900;
-    if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) > $timeout_time) {
+    define("TIMEOUT_TIME", 15 * 60);
+    if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) > TIMEOUT_TIME) {
         console_log("> FORCED LOGOUT");
         logAction("session_timeout", $_SESSION["evidence_user"], "due to inactivity");
         session_destroy();
         header("Location: /evidence.php");
         exit();
     }
-    console_log("> DEBUG :: TIME TILL TIMEOUT " . gmdate("i:s", $timeout_time - (time() - ($_SESSION["last_activity"] ?? time())))); #pouze debug do konzole jak dlouho než uživatel dostane timeout
+    console_log("> DEBUG :: TIME TILL TIMEOUT " . gmdate("i:s", TIMEOUT_TIME - (time() - ($_SESSION["last_activity"] ?? time())))); #pouze debug do konzole jak dlouho než uživatel dostane timeout
     $_SESSION["last_activity"] = time();
 
     # POST handler pro komponenty
@@ -33,7 +33,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="STYLE/evidence.css">
-    <link rel="stylesheet" href="STYLE/evidence_animals.css">
+    <link rel="stylesheet" href="STYLE/evidence_editor.css">
     <link rel="icon" href="STYLE/resources/icons/wrench.png" type="image/x-icon">
     <title>INFORMAČNÍ SYSTÉM Zoo Brno 2</title>
 </head>
@@ -74,7 +74,12 @@
                     }
                     break;
                 case "exclosures":
-                    include "COMPONENTS/evidence/exclosures.php";
+                    if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
+                        include "COMPONENTS/evidence/exclosures_edit.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/exclosures.php";
+                    }
                     break;
                 case "events":
                     include "COMPONENTS/evidence/events.php";

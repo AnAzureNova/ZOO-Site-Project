@@ -101,3 +101,24 @@
 [2026-05-08 14:56:24] [ADMIN] logout | via browser
 [2026-05-08 14:56:29] [ADMIN] login | via browser
 [2026-05-08 14:56:41] [ADMIN] animal_updated | ID: 10, CHANGES: amount: '5' → '2'
+[2026-05-08 15:15:37] [ADMIN] logout | via browser
+[2026-05-08 15:15:43] [ADMIN] login | via browser
+[2026-05-08 15:19:58] [ADMIN] logout | via browser
+[2026-05-08 15:20:06] [JOHNSMITH123] login | via browser
+[2026-05-08 15:20:23] [JOHNSMITH123] logout | via browser
+[2026-05-08 15:20:29] [BACKUP ADMIN] login | via browser
+[2026-05-08 15:20:44] [BACKUP ADMIN] animal_updated | ID: 12, CHANGES: amount: '6' → '7'
+[2026-05-08 15:20:52] [BACKUP ADMIN] logout | via browser
+[2026-05-08 15:20:55] [ADMIN] login | via browser
+[2026-05-09 08:28:01] [ADMIN] login | via browser
+[2026-05-09 08:43:16] [ADMIN] session_timeout | due to inactivity
+[2026-05-09 08:43:21] [ADMIN] login | via browser
+[2026-05-09 09:13:19] [ADMIN] session_timeout | due to inactivity
+[2026-05-09 09:13:22] [ADMIN] login | via browser
+[2026-05-09 09:18:31] [ADMIN] exclosure_created | ID: 3, NAME: Exotárium
+[2026-05-09 09:25:44] [ADMIN] animal_updated | ID: 10, CHANGES: exclosure: '' → 'Boreas'
+[2026-05-09 09:25:55] [ADMIN] animal_updated | ID: 11, CHANGES: exclosure: '' → 'Afrika'
+[2026-05-09 09:27:12] [ADMIN] exclosure_created | ID: 4, NAME: gdx
+[2026-05-09 09:27:49] [ADMIN] animal_created | ID: 13, NAME: ga
+[2026-05-09 09:27:53] [ADMIN] animal_deleted | id: 13, name: ga
+[2026-05-09 09:29:48] [ADMIN] exclosure_deleted | id: 4, name: gdx

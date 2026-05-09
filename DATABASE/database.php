@@ -21,18 +21,20 @@
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    function getALL($table, $orderBy = null, $limit = null): array{
+    function getALL($table, $orderBy = null, $limit = null, $where = null): array {
         global $db;
         $sql = "SELECT * FROM $table";
-        if ($orderBy){
-            $sql.=" ORDER BY $orderBy";
+        if ($where) {
+            $sql .= " WHERE " . $where["clause"];
         }
-        if ($limit){
-            $sql.=" LIMIT $limit";
+        if ($orderBy) {
+            $sql .= " ORDER BY $orderBy";
+        }
+        if ($limit) {
+            $sql .= " LIMIT $limit";
         }
         $stmt = $db->prepare($sql);
-        $stmt->execute();
-
+        $stmt->execute($where["params"] ?? []);
         return $stmt->fetchALL(PDO::FETCH_ASSOC);
     }
 
@@ -53,6 +55,11 @@
 
         return $employee ?: false;
     }
+
+
+
+
+
     function insertAnimal($fields): int {
         global $db;
         $stmt = $db->prepare("INSERT INTO animals_registry (create_time, name, name_latin, classification, habitat, location_of_origin, lifespan, weight, height, description, extninction_index, amount, exclosure, image, diet) VALUES (NOW(), :name, :name_latin, :classification, :habitat, :location_of_origin, :lifespan, :weight, :height, :description, :extninction_index, :amount, :exclosure, :image, :diet)");
@@ -101,6 +108,41 @@
     function deleteAnimal($id): void {
         global $db;
         $stmt = $db->prepare("DELETE FROM animals_registry WHERE id = :id");
+        $stmt->execute(["id" => $id]);
+    }
+
+
+
+
+
+    function insertExclosure($fields): int {
+        global $db;
+        $stmt = $db->prepare("INSERT INTO exclosures_registry (create_time, name, location, description, image) VALUES (NOW(), :name, :location, :description, :image)");
+        
+        $stmt->bindValue(":name", $fields["name"], PDO::PARAM_STR);
+        $stmt->bindValue(":location", $fields["location"], PDO::PARAM_STR);
+        $stmt->bindValue(":description", $fields["description"], PDO::PARAM_STR);
+        $stmt->bindValue(":image", $fields["image"], PDO::PARAM_STR);
+        
+        $stmt->execute();
+        return (int)$db->lastInsertId();
+    }
+    function updateExclosure($fields):void{
+        global $db;
+        $stmt = $db->prepare("UPDATE exclosures_registry SET name=:name, location=:location, description=:description, image=:image WHERE id=:id");
+
+        $stmt->bindValue(":name", $fields["name"], PDO::PARAM_STR);
+        $stmt->bindValue(":location", $fields["location"], PDO::PARAM_STR);
+        $stmt->bindValue(":description", $fields["description"], PDO::PARAM_STR);
+        $stmt->bindValue(":image", $fields["image"], PDO::PARAM_STR);
+        $stmt->bindValue(":id", $fields["id"], PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
+
+    function deleteExclosure($id): void {
+        global $db;
+        $stmt = $db->prepare("DELETE FROM exclosures_registry WHERE id = :id");
         $stmt->execute(["id" => $id]);
     }
 ?>
