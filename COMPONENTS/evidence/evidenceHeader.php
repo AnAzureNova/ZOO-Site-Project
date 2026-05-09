@@ -7,6 +7,8 @@
             echo "<p>".htmlspecialchars($_SESSION["evidence_user"]["firstname"]." ".$_SESSION["evidence_user"]["surname"])."</p>";
             echo "<p>".htmlspecialchars($_SESSION["evidence_user"]["occupation"])."</p>";
         ?>
-        <a href="/evidence.php?action=logout">Odhlásit se</a>
+        <?php if (isset($_SESSION["evidence_user"])): ?>
+            <a class="editor_button" href="/evidence.php?action=logout">Odhlásit se</a>
+        <?php endif; ?>
     </div>
 </header>

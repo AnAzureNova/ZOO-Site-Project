@@ -56,7 +56,7 @@
                     }
                 }
                 
-                $detail = !empty($changed) ? "ID: {$id}, CHANGES: " . implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: ".implode(", ", $changed) : "ID: {$id}, NO CHANGES";
                 updateAnimal($fields);
                 logAction("animal_updated", $_SESSION["evidence_user"], $detail);
                 echo "<script>window.location.href='/evidence.php?page=animals&action=edit&id={$id}';</script>";
@@ -72,7 +72,7 @@
             if ($formAction === "delete" && !$isNew && $id) {
                 $exclosure = get("exclosures_registry", $id);
                 deleteExclosure($id);
-                logAction("exclosure_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: " . ($exclosure["name"] ?? "?"));
+                logAction("exclosure_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: ".($exclosure["name"] ?? "?"));
                 header("Location: /evidence.php?page=exclosures");
                 exit();
             }
@@ -86,7 +86,7 @@
 
             if ($isNew) {
                 $newId = insertExclosure($fields);
-                logAction("exclosure_created", $_SESSION["evidence_user"], "ID: {$newId}, NAME: " . $fields["name"]);
+                logAction("exclosure_created", $_SESSION["evidence_user"], "ID: {$newId}, NAME: ".$fields["name"]);
                 echo "<script>window.location.href='/evidence.php?page=exclosures&action=edit&id={$newId}';</script>";
                 exit();
             }
@@ -105,10 +105,70 @@
                     }
                 }
                 
-                $detail = !empty($changed) ? "ID: {$id}, CHANGES: " . implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: ".implode(", ", $changed) : "ID: {$id}, NO CHANGES";
                 updateExclosure($fields);
                 logAction("exclosure_updated", $_SESSION["evidence_user"], $detail);
                 echo "<script>window.location.href='/evidence.php?page=exclosures&action=edit&id={$id}';</script>";
+                exit();
+            }
+        }
+
+        #--------------------------------------------------------------------------------------
+        # tato část se zaměřuje na úpravu akcí a programu (management akcí/events page tab)
+        if ($page === "events") {
+            $isNew = ($_GET["action"] ?? "") === "new";
+
+            if ($formAction === "delete" && !$isNew && $id) {
+                $event = get("events_registry", $id);
+                deleteEvent($id);
+                logAction("events_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: ".($event["title"] ?? "?"));
+                header("Location: /evidence.php?page=events");
+                exit();
+            }
+
+            $rawDate = trim($_POST["date_published"] ?? "");
+            $parsedDate = DateTime::createFromFormat("Y-m-d", $rawDate);
+            $dateValue = ($parsedDate && $parsedDate->format("Y-m-d") === $rawDate) ? $rawDate : null;
+
+            $rawTime = trim($_POST["start_time"] ?? "");
+            $parsedTime = DateTime::createFromFormat("H:i", $rawTime);
+            $timeValue = $parsedTime ? $parsedTime->format("H:i:s") : null;
+
+            $fields = [
+                "title" => trim($_POST["title"] ?? ""),
+                "location" => trim($_POST["location"] ?? ""),
+                "description" => trim($_POST["description"] ?? ""),
+                "linktoredirect" => trim($_POST["linktoredirect"] ?? ""),
+                "date_published" => $dateValue,
+                "start_time" => $timeValue,
+                "image" => trim($_POST["image"] ?? ""),
+            ];
+
+            if ($isNew) {
+                $newId = insertEvent($fields);
+                logAction("event_created", $_SESSION["evidence_user"], "ID: {$newId}, NAME: ".$fields["title"]);
+                echo "<script>window.location.href='/evidence.php?page=events&action=edit&id={$newId}';</script>";
+                exit();
+            }
+            else{
+                $fields["id"] = $id;
+                
+                $old = get("events_registry", $id);
+                $changed = [];
+                $trackFields = ["title", "location", "description", "linktoredirect", "date_published", "start_time", "image"];
+                
+                foreach ($trackFields as $field) {
+                    $oldVal = (string)($old[$field] ?? "");
+                    $newVal = (string)($fields[$field] ?? "");
+                    if ($oldVal !== $newVal) {
+                        $changed[] = "{$field}: '{$oldVal}' → '{$newVal}'";
+                    }
+                }
+                
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: ".implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                updateEvent($fields);
+                logAction("event_updated", $_SESSION["evidence_user"], $detail);
+                echo "<script>window.location.href='/evidence.php?page=events&action=edit&id={$id}';</script>";
                 exit();
             }
         }

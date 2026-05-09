@@ -1,5 +1,5 @@
 <?php
-    $exclosures = getALL("exclosures_registry", "name ASC");
+    $exclosures = getALL("exclosures_registry", "id DESC");
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
@@ -12,7 +12,7 @@
                 <tr>
                     <th>ID</th>
                     <th>NÁZEV</th>
-                    <th>LOKACE</th>
+                    <th>LOKACE EXPOZICE</th>
                     <th>POČET ZVÍŘAT</th>
                     <th>NEJBĚŽNĚJŠÍ ZVÍŘE</th>
                     <th></th>

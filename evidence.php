@@ -34,6 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="STYLE/evidence.css">
     <link rel="stylesheet" href="STYLE/evidence_editor.css">
+    <link rel="stylesheet" href="STYLE/evidence_login.css">
     <link rel="icon" href="STYLE/resources/icons/wrench.png" type="image/x-icon">
     <title>INFORMAČNÍ SYSTÉM Zoo Brno 2</title>
 </head>
@@ -67,7 +68,7 @@
                     break;
                 case "animals":
                     if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
-                        include "COMPONENTS/evidence/animals_edit.php";
+                        include "COMPONENTS/evidence/editors/animals_edit.php";
                     }
                     else{
                         include "COMPONENTS/evidence/animals.php";
@@ -75,14 +76,19 @@
                     break;
                 case "exclosures":
                     if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
-                        include "COMPONENTS/evidence/exclosures_edit.php";
+                        include "COMPONENTS/evidence/editors/exclosures_edit.php";
                     }
                     else{
                         include "COMPONENTS/evidence/exclosures.php";
                     }
                     break;
                 case "events":
-                    include "COMPONENTS/evidence/events.php";
+                    if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
+                        include "COMPONENTS/evidence/editors/events_edit.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/events.php";
+                    }
                     break;
                 case "eshop":
                     include "COMPONENTS/evidence/eshop.php";

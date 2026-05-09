@@ -45,14 +45,16 @@ header{
 header div{
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 10px;
     /*border: solid white 1px;*/
     justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 0 30px;
 }
-
+header .editor_button{
+    width: 35%;
+}
 main {
     display: grid;
     grid-template-columns: 20% auto;

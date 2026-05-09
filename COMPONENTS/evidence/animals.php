@@ -1,5 +1,5 @@
 <?php
-    $animals = getALL("animals_registry", "name ASC");
+    $animals = getALL("animals_registry", "id DESC");
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">

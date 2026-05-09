@@ -122,3 +122,33 @@
 [2026-05-09 09:27:49] [ADMIN] animal_created | ID: 13, NAME: ga
 [2026-05-09 09:27:53] [ADMIN] animal_deleted | id: 13, name: ga
 [2026-05-09 09:29:48] [ADMIN] exclosure_deleted | id: 4, name: gdx
+[2026-05-09 19:13:04] [SYSTEM] failed login attempt
+[2026-05-09 19:16:19] [SYSTEM] failed login attempt
+[2026-05-09 19:16:34] [SYSTEM] failed login attempt
+[2026-05-09 19:17:01] [SYSTEM] failed login attempt
+[2026-05-09 19:17:16] [SYSTEM] failed login attempt
+[2026-05-09 19:18:18] [SYSTEM] failed login attempt
+[2026-05-09 19:18:45] [SYSTEM] failed login attempt
+[2026-05-09 19:19:36] [SYSTEM] failed login attempt
+[2026-05-09 19:20:29] [SYSTEM] failed login attempt
+[2026-05-09 19:21:14] [SYSTEM] failed login attempt
+[2026-05-09 19:21:37] [SYSTEM] failed login attempt
+[2026-05-09 19:21:45] [ADMIN] login | via browser
+[2026-05-09 19:22:48] [ADMIN] logout | via browser
+[2026-05-09 19:40:59] [ADMIN] login | via browser
+[2026-05-09 19:46:39] [ADMIN] logout | via browser
+[2026-05-09 19:46:44] [ADMIN] login | via browser
+[2026-05-09 21:02:56] [ADMIN] event_created | ID: 4, NAME: Test
+[2026-05-09 21:03:13] [ADMIN] events_deleted | ID: 4, name: Test
+[2026-05-09 21:09:10] [ADMIN] event_updated | ID: 2, CHANGES: date_published: '2026-05-20' → ''
+[2026-05-09 21:11:59] [ADMIN] event_updated | ID: 2, CHANGES: date_published: '' → '2026-06-05'
+[2026-05-09 21:12:10] [ADMIN] event_updated | ID: 1, CHANGES: date_published: '2026-05-12' → '2026-05-13'
+[2026-05-09 21:12:31] [ADMIN] event_updated | ID: 1, CHANGES: date_published: '2026-05-13' → '2026-05-10'
+[2026-05-09 21:13:09] [ADMIN] event_updated | ID: 1, CHANGES: start_time: '09:00:00' → '15:00:00'
+[2026-05-09 21:13:25] [ADMIN] logout | via browser
+[2026-05-09 21:14:09] [ADMIN] login | via browser
+[2026-05-09 21:14:27] [ADMIN] logout | via browser
+[2026-05-09 21:14:30] [SYSTEM] failed login attempt
+[2026-05-09 21:14:38] [ADMIN] login | via browser
+[2026-05-09 21:16:32] [ADMIN] event_updated | ID: 1, CHANGES: start_time: '15:00:00' → '16:00:00'
+[2026-05-09 21:16:50] [ADMIN] event_updated | ID: 1, CHANGES: date_published: '2026-05-10' → '2026-05-05'

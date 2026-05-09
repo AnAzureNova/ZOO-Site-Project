@@ -145,4 +145,47 @@
         $stmt = $db->prepare("DELETE FROM exclosures_registry WHERE id = :id");
         $stmt->execute(["id" => $id]);
     }
+
+
+
+
+
+
+    function insertEvent($fields): int {
+        global $db;
+        $stmt = $db->prepare("INSERT INTO events_registry (date_published, start_time, title, location, description, linktoredirect, image) VALUES (:date_published, :start_time, :title, :location, :description, :linktoredirect, :image)");
+        
+        $stmt->bindValue(":date_published", $fields["date_published"], $fields["date_published"] === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":start_time", $fields["start_time"], $fields["start_time"] === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":title", $fields["title"], PDO::PARAM_STR);
+        $stmt->bindValue(":location", $fields["location"], PDO::PARAM_STR);
+        $stmt->bindValue(":description", $fields["description"], PDO::PARAM_STR);
+        $stmt->bindValue(":linktoredirect", $fields["linktoredirect"], PDO::PARAM_STR);
+        $stmt->bindValue(":image", $fields["image"], PDO::PARAM_STR);
+        
+        $stmt->execute();
+        return (int)$db->lastInsertId();
+    }
+
+    function updateEvent($fields): void {
+        global $db;
+        $stmt = $db->prepare("UPDATE events_registry SET date_published=:date_published, start_time=:start_time, title=:title, location=:location, description=:description, linktoredirect=:linktoredirect, image=:image WHERE id=:id");
+
+        $stmt->bindValue(":date_published", $fields["date_published"], $fields["date_published"] === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":start_time", $fields["start_time"], $fields["start_time"] === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":title", $fields["title"], PDO::PARAM_STR);
+        $stmt->bindValue(":location", $fields["location"], PDO::PARAM_STR);
+        $stmt->bindValue(":description", $fields["description"], PDO::PARAM_STR);
+        $stmt->bindValue(":linktoredirect", $fields["linktoredirect"], PDO::PARAM_STR);
+        $stmt->bindValue(":image", $fields["image"], PDO::PARAM_STR);
+        $stmt->bindValue(":id", $fields["id"], PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
+
+    function deleteEvent($id): void {
+        global $db;
+        $stmt = $db->prepare("DELETE FROM events_registry WHERE id = :id");
+        $stmt->execute(["id" => $id]);
+    }
 ?>
