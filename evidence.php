@@ -23,6 +23,7 @@
     }
     console_log("> DEBUG :: TIME TILL TIMEOUT " . gmdate("i:s", TIMEOUT_TIME - (time() - ($_SESSION["last_activity"] ?? time())))); #pouze debug do konzole jak dlouho než uživatel dostane timeout
     $_SESSION["last_activity"] = time();
+    trackActivity($_SESSION["evidence_user"]);
 
     # POST handler pro komponenty
     include "COMPONENTS/evidence/handlers/post_handler.php";
@@ -51,7 +52,7 @@
         <a href="evidence.php?page=events">AKCE A PROGRAMY</a>
         <a href="evidence.php?page=eshop">ZÁZNAMY E-SHOPU</a>
         <a href="evidence.php?page=visitorlog">PŘEHLED NÁVŠTĚVNÍKŮ</a>
-        <a href="evidence.php?page=employeelog">PŘEHLED ZAMĚSTNANCŮ</a>
+        <a href="evidence.php?page=employees">PŘEHLED ZAMĚSTNANCŮ</a>
         <a href="evidence.php?page=syslog">HISTORIE SYSTÉMU</a>
     </aside>
     <section class="evidence_main">
@@ -96,8 +97,13 @@
                 case "visitorlog":
                     include "COMPONENTS/evidence/visitorlog.php";
                     break;
-                case "employeelog":
-                    include "COMPONENTS/evidence/employeelog.php";
+                case "employees":
+                    if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){
+                        include "COMPONENTS/evidence/editors/employees_edit.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/employees.php";
+                    }
                     break;
                 case "syslog":
                     include "COMPONENTS/evidence/log/syslog.php";

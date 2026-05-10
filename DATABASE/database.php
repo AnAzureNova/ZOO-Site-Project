@@ -104,7 +104,6 @@
 
         $stmt->execute();
     }
-
     function deleteAnimal($id): void {
         global $db;
         $stmt = $db->prepare("DELETE FROM animals_registry WHERE id = :id");
@@ -139,7 +138,6 @@
 
         $stmt->execute();
     }
-
     function deleteExclosure($id): void {
         global $db;
         $stmt = $db->prepare("DELETE FROM exclosures_registry WHERE id = :id");
@@ -166,7 +164,6 @@
         $stmt->execute();
         return (int)$db->lastInsertId();
     }
-
     function updateEvent($fields): void {
         global $db;
         $stmt = $db->prepare("UPDATE events_registry SET date_published=:date_published, start_time=:start_time, title=:title, location=:location, description=:description, linktoredirect=:linktoredirect, image=:image WHERE id=:id");
@@ -182,10 +179,58 @@
 
         $stmt->execute();
     }
-
     function deleteEvent($id): void {
         global $db;
         $stmt = $db->prepare("DELETE FROM events_registry WHERE id = :id");
         $stmt->execute(["id" => $id]);
+    }
+
+
+
+
+
+
+    function insertEmployee($fields): int {
+        global $db;
+        $stmt = $db->prepare("INSERT INTO employees_registry (create_time, firstname, surname, occupation, salary, status, web_username, web_password, shift) VALUES (NOW(), :firstname, :surname, :occupation, :salary, :status, :web_username, :web_password, :shift)");
+
+        $stmt->bindValue(":firstname", $fields["firstname"], PDO::PARAM_STR);
+        $stmt->bindValue(":surname", $fields["surname"], PDO::PARAM_STR);
+        $stmt->bindValue(":occupation", $fields["occupation"], PDO::PARAM_STR);
+        $stmt->bindValue(":salary", $fields["salary"], PDO::PARAM_STR);
+        $stmt->bindValue(":status", $fields["status"], PDO::PARAM_STR);
+        $stmt->bindValue(":web_username", $fields["web_username"], PDO::PARAM_STR);
+        $stmt->bindValue(":web_password", $fields["web_password"], PDO::PARAM_STR);
+        $stmt->bindValue(":shift", $fields["shift"], PDO::PARAM_STR);
+
+        $stmt->execute();
+        return (int)$db->lastInsertId();
+    }
+
+    function updateEmployee($fields): void {
+        global $db;
+        $stmt = $db->prepare("UPDATE employees_registry SET firstname=:firstname, surname=:surname, occupation=:occupation, salary=:salary, status=:status, web_username=:web_username, web_password=:web_password, shift=:shift WHERE id=:id");
+        
+        $stmt->bindValue(":firstname", $fields["firstname"], PDO::PARAM_STR);
+        $stmt->bindValue(":surname", $fields["surname"], PDO::PARAM_STR);
+        $stmt->bindValue(":occupation", $fields["occupation"], PDO::PARAM_STR);
+        $stmt->bindValue(":salary", $fields["salary"], PDO::PARAM_STR);
+        $stmt->bindValue(":status", $fields["status"], PDO::PARAM_STR);
+        $stmt->bindValue(":web_username", $fields["web_username"], PDO::PARAM_STR);
+        $stmt->bindValue(":web_password", $fields["web_password"], PDO::PARAM_STR);
+        $stmt->bindValue(":shift", $fields["shift"], PDO::PARAM_STR);
+        $stmt->bindValue(":id", $fields["id"], PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    function deleteEmployee($id): void {
+        global $db;
+        $stmt = $db->prepare("DELETE FROM employees_registry WHERE id = :id");
+        $stmt->execute(["id" => $id]);
+    }
+    function trackActivity($user): void {
+        global $db;
+        $stmt = $db->prepare("UPDATE employees_registry SET web_activity = NOW() WHERE id = :id");
+        $stmt->execute(["id" => $user["id"]]);
     }
 ?>

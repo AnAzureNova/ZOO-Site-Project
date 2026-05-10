@@ -152,3 +152,52 @@
 [2026-05-09 21:14:38] [ADMIN] login | via browser
 [2026-05-09 21:16:32] [ADMIN] event_updated | ID: 1, CHANGES: start_time: '15:00:00' → '16:00:00'
 [2026-05-09 21:16:50] [ADMIN] event_updated | ID: 1, CHANGES: date_published: '2026-05-10' → '2026-05-05'
+[2026-05-10 10:19:01] [ADMIN] login | via browser
+[2026-05-10 10:21:34] [ADMIN] animal_created | ID: 14, NAME: Alpaka
+[2026-05-10 10:22:22] [ADMIN] animal_updated | ID: 14, CHANGES: name_latin: '' → 'Lama guanicoe f. pacos', classification: '' → 'Řád – Sudokopytníci (Cetartiodactyla) | Čeleď – Velbloudovití (Camelidae)'
+[2026-05-10 10:24:43] [ADMIN] animal_updated | ID: 14, CHANGES: habitat: '' → 'Travnaté území, hory', location_of_origin: '' → 'Náhorní plošiny And, od Ekvádoru po severozápadní Argentinu, Bolívie, Peru', lifespan: '' → '20+ let', weight: '' → '55 - 65 kg', height: '' → '100 cm', amount: '0' → '5', diet: '' → 'Tráva, byliny, sukulenty, mechy'
+[2026-05-10 10:36:02] [ADMIN] animal_updated | ID: 14, CHANGES: description: '' → 'Lamy společně se svými nejbližšími příbuznými velbloudy tvoří v rámci řádu sudokopytníků zvláštní podřád – velbloudi (dříve mozolnatci). Lamy alpaky mívají nejčastěji hnědé nebo černé zbarvení, obvykle v kombinaci s bílou. Chovají se ve velkých stádech především pro kvalitní vlnu. Stříhají se jednou za 18–24 měsíců, získaná vlna je velmi kvalitní.', image: '' → 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.alpaka-dreams.de%2Fwp-content%2Fuploads%2F2019%2F09%2Falpaka-dreams-herbst-small-4.jpg&f=1&nofb=1&ipt=ab35c708b676ab092f1ab19eae728a6618f8a27e0db9865a564af9478d2129ac'
+[2026-05-10 10:37:05] [ADMIN] animal_created | ID: 15, NAME: Daman skalní
+[2026-05-10 10:38:37] [ADMIN] animal_updated | ID: 15, CHANGES: name_latin: '' → 'Procavia capensis', lifespan: '' → '14 let', description: '' → 'Daman skalní je malý africký savec, který na první pohled připomíná hlodavce, ve skutečnosti je však blízký příbuzný slonů a kapustňáků. Jeho chrup má pár stále dorůstajících řezáků připomínajících kly a stoličky tvarově podobné těm nosorožčím. Díky vlhkým polštářkům na chodidlech výborně šplhá po skalách, kde žije ve skupinách čítajících až několik desítek jedinců. Má bohatou hlasovou komunikaci – samci zpívají složité „písně“, které slouží k obraně teritoria – liší se podle regionu. Často se vyhřívá na slunci, aby reguloval teplotu. Jeho moč i výkaly po generace vytvářejí vrstvy zvané hyraceum, využívané jsou v tradiční domorodé medicíně a parfumerii.
+
+Daman skalní je v některých oblastech loven pro maso a hyraceum. V důsledku lidské činnosti dochází ke ztrátě jeho přirozeného skalnatého biotopu.', extninction_index: '0' → '1'
+[2026-05-10 10:38:44] [ADMIN] animal_updated | ID: 15, CHANGES: amount: '0' → '8'
+[2026-05-10 10:43:22] [ADMIN] animal_updated | ID: 15, CHANGES: classification: '' → 'Řád – Damani (Hyracoidea) | Čeleď – Damanovití (Procaviidae)', habitat: '' → 'Skalnatá suchá oblast', location_of_origin: '' → 'Subsaharská Afrika, Libye, Alžírsko, Sýrie', weight: '' → '1,8 - 5,5 kg', height: '' → '30 - 55 cm', exclosure: '' → 'Afrika', image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fapi.zoohluboka.cz%2Fstorage%2F1920x1920_1698912268.4461_6559-daman4.JPG&f=1&nofb=1&ipt=d23dd1fd187e3892aed1f32b665ef2600560b330b14c0cd26b89d43ddd71ae62', diet: '' → 'Tráva, listy, výhonky, větvičky'
+[2026-05-10 10:43:48] [ADMIN] animal_updated | ID: 11, CHANGES: classification: 'Řád – Šelmy (Carnivora) | Čeleď – Kočkovití (Felidae)' → 'Řád - Šelmy (Carnivora) | Čeleď - Kočkovití (Felidae)'
+[2026-05-10 10:44:04] [ADMIN] animal_updated | ID: 14, CHANGES: classification: 'Řád – Sudokopytníci (Cetartiodactyla) | Čeleď – Velbloudovití (Camelidae)' → 'Řád - Sudokopytníci (Cetartiodactyla) | Čeleď - Velbloudovití (Camelidae)'
+[2026-05-10 10:44:18] [ADMIN] animal_updated | ID: 15, CHANGES: classification: 'Řád – Damani (Hyracoidea) | Čeleď – Damanovití (Procaviidae)' → 'Řád - Damani (Hyracoidea) | Čeleď - Damanovití (Procaviidae)'
+[2026-05-10 10:46:16] [ADMIN] exclosure_created | ID: 5, NAME: Asie
+[2026-05-10 10:46:39] [ADMIN] exclosure_created | ID: 6, NAME: Jížní Amerika
+[2026-05-10 10:46:55] [ADMIN] exclosure_created | ID: 7, NAME: Sahul
+[2026-05-10 10:47:09] [ADMIN] animal_updated | ID: 14, CHANGES: exclosure: '' → 'Jížní Amerika'
+[2026-05-10 10:47:16] [ADMIN] animal_updated | ID: 12, CHANGES: exclosure: '' → 'Jížní Amerika'
+[2026-05-10 10:55:01] [ADMIN] animal_created | ID: 16, NAME: Hoko červevný
+[2026-05-10 11:21:51] [ADMIN] session_timeout | due to inactivity
+[2026-05-10 11:21:55] [ADMIN] login | via browser
+[2026-05-10 12:01:09] [ADMIN] logout | via browser
+[2026-05-10 12:01:13] [ADMIN] login | via browser
+[2026-05-10 12:21:46] [ADMIN] session_timeout | due to inactivity
+[2026-05-10 12:21:50] [ADMIN] login | via browser
+[2026-05-10 12:25:41] [ADMIN] logout | via browser
+[2026-05-10 12:25:49] [JOHNSMITH123] login | via browser
+[2026-05-10 12:26:22] [JOHNSMITH123] logout | via browser
+[2026-05-10 12:26:26] [ADMIN] login | via browser
+[2026-05-10 12:32:20] [ADMIN] logout | via browser
+[2026-05-10 12:32:28] [SYSTEM] failed login attempt
+[2026-05-10 12:32:36] [JOHNSMITH123] login | via browser
+[2026-05-10 12:33:18] [JOHNSMITH123] logout | via browser
+[2026-05-10 12:33:23] [ADMIN] login | via browser
+[2026-05-10 12:37:16] [ADMIN] logout | via browser
+[2026-05-10 12:37:24] [JOHNSMITH123] login | via browser
+[2026-05-10 12:37:48] [JOHNSMITH123] logout | via browser
+[2026-05-10 12:37:52] [ADMIN] login | via browser
+[2026-05-10 20:27:50] [ADMIN] login | via browser
+[2026-05-10 20:49:09] [ADMIN] session_timeout | due to inactivity
+[2026-05-10 20:49:13] [ADMIN] login | via browser
+[2026-05-10 20:49:28] [ADMIN] employee_updated | ID: 3, CHANGES: salary: '20000' → '16000'
+[2026-05-10 20:51:34] [ADMIN] employee_created | ID: 4, NAME: AlexColton_ZOO1225
+[2026-05-10 21:02:30] [ADMIN] employee_updated | ID: 4, CHANGES: occupation: 'manager' → 'vedoucí obchodu'
+[2026-05-10 21:04:01] [ADMIN] logout | via browser
+[2026-05-10 21:04:16] [ALEXCOLTON_ZOO1225] login | via browser
+[2026-05-10 21:04:42] [ALEXCOLTON_ZOO1225] logout | via browser
+[2026-05-10 21:04:46] [ADMIN] login | via browser

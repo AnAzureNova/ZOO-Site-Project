@@ -34,8 +34,8 @@
                                 <td class='editor_muted'>#".htmlspecialchars($exclosure['id'])."</td>
                                 <td><strong>".htmlspecialchars($exclosure['name'])."</strong></td>
                                 <td class='editor_italic editor_muted'>".htmlspecialchars($exclosure['location'])."</td>
-                                <td><strong>".$totalAmount."</strong></td>
-                                <td><strong>".htmlspecialchars($mostCommon)."</strong></td>
+                                <td>".$totalAmount."</td>
+                                <td>".htmlspecialchars($mostCommon)."</td>
                                 <td><a class='editor_button' href='evidence.php?page=exclosures&action=edit&id=".htmlspecialchars($exclosure['id'])."'>UPRAVIT</a></td>
                                 </tr>";
                         }

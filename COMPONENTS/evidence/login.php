@@ -5,7 +5,7 @@
         $employee = loginEmployee($username, $password);
 
         if ($employee) {
-            $_SESSION["evidence_user"] = ["id"=>$employee["id"], "username" => $employee["web_username"], "firstname" => $employee["firstname"], "surname" => $employee["surname"], "occupation" => $employee["occupation"],];
+            $_SESSION["evidence_user"] = ["id"=>$employee["id"], "username" => $employee["web_username"], "firstname" => $employee["firstname"], "surname" => $employee["surname"], "occupation" => $employee["occupation"],"status" => $employee["status"],];
             logAction("login", $_SESSION["evidence_user"], "via browser");
             header("Location: /evidence.php");
             exit();

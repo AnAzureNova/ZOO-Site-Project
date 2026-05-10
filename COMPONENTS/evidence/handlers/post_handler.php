@@ -172,5 +172,58 @@
                 exit();
             }
         }
+
+        #--------------------------------------------------------------------------------------
+        # tato část se zaměřuje na úpravu uživatelů (management uživatelů/employees page tab)
+        if ($page === "employees") {
+            $isNew = ($_GET["action"] ?? "") === "new";
+
+            if ($formAction === "delete" && !$isNew && $id) {
+                $employee = get("employees_registry", $id);
+                deleteEmployee($id);
+                logAction("employee_deleted", $_SESSION["evidence_user"], "ID: {$id}, name: " . ($employee["web_username"] ?? "?"));
+                header("Location: /evidence.php?page=employees");
+                exit();
+            }
+
+            $fields = [
+                "firstname" => trim($_POST["firstname"] ?? ""),
+                "surname" => trim($_POST["surname"] ?? ""),
+                "occupation" => trim($_POST["occupation"] ?? ""),
+                "salary" => is_numeric($_POST["salary"] ?? "") ? floatval($_POST["salary"]) : 0,
+                "status" => trim($_POST["status"] ?? ""),
+                "web_username" => trim($_POST["web_username"] ?? ""),
+                "web_password" => trim($_POST["web_password"] ?? ""),
+                "shift" => trim($_POST["shift"] ?? ""),
+            ];
+
+            if ($isNew) {
+                $newId = insertEmployee($fields);
+                logAction("employee_created", $_SESSION["evidence_user"], "ID: {$newId}, NAME: " . $fields["web_username"]);
+                echo "<script>window.location.href='/evidence.php?page=employees&action=edit&id={$newId}';</script>";
+                exit();
+            }
+            else{
+                $fields["id"] = $id;
+                
+                $old = get("employees_registry", $id);
+                $changed = [];
+                $trackFields = ["firstname", "surname", "occupation", "salary", "status", "web_username", "web_password", "shift"];
+                
+                foreach ($trackFields as $field) {
+                    $oldVal = (string)($old[$field] ?? "");
+                    $newVal = (string)($fields[$field] ?? "");
+                    if ($oldVal !== $newVal) {
+                        $changed[] = "{$field}: '{$oldVal}' → '{$newVal}'";
+                    }
+                }
+                
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: ".implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                updateEmployee($fields);
+                logAction("employee_updated", $_SESSION["evidence_user"], $detail);
+                echo "<script>window.location.href='/evidence.php?page=employees&action=edit&id={$id}';</script>";
+                exit();
+            }
+        }
     }
 ?>

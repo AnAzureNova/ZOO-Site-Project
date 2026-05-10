@@ -59,8 +59,8 @@
                                 <td class='editor_muted'>#".htmlspecialchars($event['id'])."</td>
                                 <td><strong>".htmlspecialchars($event['title'])."</strong></td>
                                 <td class='editor_italic editor_muted'>".htmlspecialchars($event['location'])."</td>
-                                <td><strong>".$formattedDate."</strong></td>
-                                <td><strong>".htmlspecialchars($event['start_time'])."</strong></td>
+                                <td>".$formattedDate."</td>
+                                <td>".htmlspecialchars($event['start_time'])."</td>
                                 <td class='editor_italic editor_muted'>".$dueIn."</td>
                                 <td><a class='editor_button' href='evidence.php?page=events&action=edit&id=".htmlspecialchars($event['id'])."'>UPRAVIT</a></td>
                             </tr>";
