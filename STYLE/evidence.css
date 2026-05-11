@@ -23,6 +23,7 @@ body{
     font-family: Comfortaa;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 h1{
     font-family: DINPro;
@@ -67,19 +68,38 @@ main {
     min-height: 100%;
     padding: 0 0;
 }
+.evidence_sideNav div{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 0 20px;
+    /*border: solid white 1px;*/
+}
 .evidence_sideNav a{
     color: #fff;
-    cursor: pointer;
     text-decoration: none;
-    height: 6vh;
     align-content: center;
-    font-family: Comfortaa;
-    font-size: 1.3rem;
-    padding: 0 50px;
+    font-family: DINPro;
+    font-weight: 100;
+    padding: 0 10px;
+    font-size: 1rem;
+    width: 100%;
+    /*border: solid white 1px;*/
 }
-.evidence_sideNav a.active {color: #ffc272; padding-left: 40px;}
-.evidence_sideNav a:hover{background-color: #303030;transition: cubic-bezier(0.39, 0.575, 0.565, 1) 300ms; padding-left: 40px;}
-
+.evidence_sideNav a.active {color: #ffc272;letter-spacing: 2px;}
+.evidence_sideNav div:has(> a.active){
+    background-color: #313131;
+    padding-left: 25px;
+    pointer-events: none;
+}
+.evidence_sideNav img:has(+ a.active){
+    filter: invert(30%) sepia(100%) saturate(400%) hue-rotate(340deg) brightness(100%) contrast(95%);
+}
+.evidence_sideNav div:hover{background-color: #313131; transition: cubic-bezier(0.39, 0.575, 0.565, 1) 100ms; padding-left: 25px;}
+#sidebar_icon{
+    width: 50px;
+    scale: 55%;
+}
 .evidence_main{
     display: flex;
     flex-direction: column;

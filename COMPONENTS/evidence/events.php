@@ -39,8 +39,8 @@
                                 else if ($eventDate < $today) $dueIn = "Akce proběhla";
                                 else if ($diff === 1) $dueIn = "Zítra";
                                 else if ($diff === 2) $dueIn = "Pozítří";
-                                else if ($diff < 5) $dueIn = "za ".$diff." dny";
-                                else $dueIn = "za ".$diff." dní";
+                                else if ($diff < 5) $dueIn = "Za ".$diff." dny";
+                                else $dueIn = "Za ".$diff." dní";
 
                                 if (class_exists("IntlDateFormatter")){
                                     $formatter = new IntlDateFormatter("cs_CZ", IntlDateFormatter::LONG, IntlDateFormatter::NONE);

@@ -201,3 +201,15 @@ Daman skalní je v některých oblastech loven pro maso a hyraceum. V důsledku 
 [2026-05-10 21:04:16] [ALEXCOLTON_ZOO1225] login | via browser
 [2026-05-10 21:04:42] [ALEXCOLTON_ZOO1225] logout | via browser
 [2026-05-10 21:04:46] [ADMIN] login | via browser
+[2026-05-11 05:37:51] [ADMIN] login | via browser
+[2026-05-11 05:40:44] [ADMIN] animal_updated | ID: 16, CHANGES: amount: '2' → '3'
+[2026-05-11 05:47:54] [ADMIN] console_report | zamn
+[2026-05-11 06:05:33] [ADMIN] animal_updated | ID: 16, CHANGES: amount: '3' → '4'
+[2026-05-11 06:07:54] [ADMIN] event_updated | ID: 2, CHANGES: date_published: '2026-06-05' → '2026-05-14'
+[2026-05-11 06:20:11] [ADMIN] logout | via browser
+[2026-05-11 06:20:35] [JOHNSMITH123] login | via browser
+[2026-05-11 06:21:07] [JOHNSMITH123] logout | via browser
+[2026-05-11 06:21:11] [ADMIN] login | via browser
+[2026-05-11 14:21:31] [ADMIN] login | via browser
+[2026-05-11 19:49:47] [ADMIN] login | via browser
+[2026-05-11 20:08:19] [ADMIN] logout | via browser

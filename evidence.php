@@ -45,15 +45,15 @@
 ?>
 <main>
     <aside class="evidence_sideNav">
-        <a href="evidence.php?page=home">HLAVNÍ STRÁNKA</a>
-        <a href="evidence.php?page=management">MANAGEMENT ZOO</a>
-        <a href="evidence.php?page=animals">EVIDENCE ZVÍŘAT</a>
-        <a href="evidence.php?page=exclosures">EXPOZICE</a>
-        <a href="evidence.php?page=events">AKCE A PROGRAMY</a>
-        <a href="evidence.php?page=eshop">ZÁZNAMY E-SHOPU</a>
-        <a href="evidence.php?page=visitorlog">PŘEHLED NÁVŠTĚVNÍKŮ</a>
-        <a href="evidence.php?page=employees">PŘEHLED ZAMĚSTNANCŮ</a>
-        <a href="evidence.php?page=syslog">HISTORIE SYSTÉMU</a>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/close.png"><a href="evidence.php?page=home">HLAVNÍ STRÁNKA</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/close.png"><a href="evidence.php?page=management">MANAGEMENT ZOO</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/animals.png"><a href="evidence.php?page=animals">EVIDENCE ZVÍŘAT</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/exclosures.png"><a href="evidence.php?page=exclosures">EXPOZICE</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/events.png"><a href="evidence.php?page=events">AKCE A PROGRAMY</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/purchases.png"><a href="evidence.php?page=payments">ZÁZNAM NÁKUPŮ</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/visitors.png"><a href="evidence.php?page=visitors">PŘEHLED NÁVŠTĚVNÍKŮ</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/employees.png"><a href="evidence.php?page=employees">PŘEHLED ZAMĚSTNANCŮ</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/syslog.png"><a href="evidence.php?page=syslog">HISTORIE SYSTÉMU</a></div>
     </aside>
     <section class="evidence_main">
         <?php
@@ -91,11 +91,21 @@
                         include "COMPONENTS/evidence/events.php";
                     }
                     break;
-                case "eshop":
-                    include "COMPONENTS/evidence/eshop.php";
+                case "payments":
+                    if (isset($_GET["action"]) && ($_GET["action"] === "view")){
+                        include "COMPONENTS/evidence/editors/payments_view.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/payments.php";
+                    }
                     break;
-                case "visitorlog":
-                    include "COMPONENTS/evidence/visitorlog.php";
+                case "visitors":
+                    if (isset($_GET["action"]) && ($_GET["action"] === "view")){
+                        include "COMPONENTS/evidence/editors/visitors_view.php";
+                    }
+                    else{
+                        include "COMPONENTS/evidence/visitors.php";
+                    }
                     break;
                 case "employees":
                     if (isset($_GET["action"]) && ($_GET["action"] === "edit" || $_GET["action"] === "new")){

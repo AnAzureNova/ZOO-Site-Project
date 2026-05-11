@@ -28,8 +28,8 @@
                 foreach ($lines as $line){
                     preg_match('/^\[(.+?)\] \[(.+?)\] (.+)$/', $line, $match); #nemám rád regex
 
-                    $timestamp = $match[1] ?? "?"; # [1] čas (2026-04-17 14:23:01)
-                    $user = $match[2] ?? "?"; # [2] uživatel (ADMIN)
+                    $timestamp = $match[1] ?? "DATE ERR - TIME ERR"; # [1] čas (2026-04-17 14:23:01)
+                    $user = $match[2] ?? "SYSTEM"; # [2] uživatel (ADMIN)
                     $other = $match[3] ?? $line; # [3] zbytek (action | details)
                     [$action, $detail] = array_pad(explode(" | ", $other, 2), 2, ""); # rozdělí other na příslušné parametry
 

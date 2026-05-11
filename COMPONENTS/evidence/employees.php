@@ -34,8 +34,10 @@
                             if (!empty($employee["web_activity"])) {
                                 $today = new DateTime("today");
                                 $employeeActivity = new DateTime($employee["web_activity"]);
-                                $diff = (int)$today->diff($employeeActivity)->days;
+                                $activityDate = new DateTime($employeeActivity->format("Y-m-d"));
+                                $diff = (int)$today->diff($activityDate)->days;
 
+                                console_log($employee["name"].$diff);
                                 if ($diff === 0) $lastActive = "Dnes";
                                 else if ($diff === 1) $lastActive = "Včera";
                                 else $lastActive = "Před ".$diff.". dny";
