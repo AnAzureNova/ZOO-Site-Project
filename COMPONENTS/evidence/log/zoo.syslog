@@ -213,3 +213,74 @@ Daman skalní je v některých oblastech loven pro maso a hyraceum. V důsledku 
 [2026-05-11 14:21:31] [ADMIN] login | via browser
 [2026-05-11 19:49:47] [ADMIN] login | via browser
 [2026-05-11 20:08:19] [ADMIN] logout | via browser
+[2026-05-12 06:06:31] [ADMIN] login | via browser
+[2026-05-12 06:29:45] [ADMIN] animal_created | ID: 17, NAME: Kakadu růžový
+[2026-05-12 06:30:41] [ADMIN] animal_updated | ID: 17, CHANGES: name_latin: '' → 'Eolophus roseicapilla', classification: '' → 'Řád - Papoušci (Psittaciformes) | Čeleď - Kakaduovití (Cacatuidae)'
+[2026-05-12 06:33:13] [ADMIN] animal_updated | ID: 17, CHANGES: habitat: '' → 'Savana, polopoušť', location_of_origin: '' → 'Austrálie, Tasmánie', lifespan: '' → '30 - 70 let', weight: '' → '300 - 400 g', height: '' → '35 cm', extninction_index: '0' → '1', amount: '0' → '2', diet: '' → 'Semena, ořechy, ovoce, případně hmyz'
+[2026-05-12 06:34:06] [ADMIN] animal_updated | ID: 17, CHANGES: description: '' → 'Horní polovinu hlavy má světle růžovou a na ní nižší kulatou roztažitelnou chocholku. Samci a samice jsou zbarveni shodně. Rozlišovacím znakem je barva duhovky, kterou má samec tmavě hnědou až černou, samice světle hnědou až červenou.
+
+Kakadu růžový byl před druhou světovou válkou často dováženým druhem a jeho populace se zmenšovala. Po skončení války byl vyhlášen zákaz vývozu a počty kakaduů se začaly postupně zvyšovat.', exclosure: '' → 'Exotárium', image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fg.denik.cz%2F122%2Fa2%2Fkakadu-ruzovy-1444318907_irecept-galerie-560.jpg&f=1&nofb=1&ipt=8b3e67690bf78f1baab6413c9e877092046e89159a97d8a2d11e05b30cd6ff9d'
+[2026-05-12 06:39:54] [ADMIN] animal_created | ID: 18, NAME: Klokan žlutonohý
+[2026-05-12 06:42:23] [ADMIN] animal_created | ID: 19, NAME: Panda červená
+[2026-05-12 06:42:54] [ADMIN] animal_updated | ID: 19, CHANGES: weight: '' → '3 - 6 kg', height: '' → '50 - 64 cm'
+[2026-05-12 06:45:06] [ADMIN] animal_updated | ID: 19, CHANGES: habitat: '' → 'Hory, listnatý a smíšený les', location_of_origin: '' → 'Pohoří Himálaj, horské lesy Nepálu, Indie, Myanmaru, Bhútánu a Číny', lifespan: '' → '8 - 14 let', image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzoobojnice.sk%2Fwp-content%2Fuploads%2F2020%2F05%2Fpanda-cervena.jpg&f=1&nofb=1&ipt=fb95485f48fc9d50cd9752bdab93f7c35fe061b98b5fee94ea91343f13a11660', diet: '' → 'Bambusové výhonky, plody, vejce a drobní obratlovci'
+[2026-05-12 06:45:17] [ADMIN] animal_updated | ID: 19, CHANGES: amount: '0' → '2'
+[2026-05-12 06:47:16] [ADMIN] exclosure_updated | ID: 6, CHANGES: image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fscenic-landscape-patagonia-south-america-26245271.jpg&f=1&nofb=1&ipt=061fc68a629bdb95fde5f525ed586970edef2be4df29f549cd6303bcb53cb590'
+[2026-05-12 06:48:31] [ADMIN] exclosure_updated | ID: 7, CHANGES: image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.the-sun.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F05%2Flm-sahul-OFF-PLAT.jpg%3Fstrip%3Dall%26quality%3D100%26w%3D1920%26h%3D1080%26crop%3D1&f=1&nofb=1&ipt=f9d9684f754d204a6e6143ad63e18bed5c4eefbd6bee0c980c0ece8105963f49'
+[2026-05-12 06:59:49] [ADMIN] animal_created | ID: 20, NAME: Korsak
+[2026-05-12 07:03:01] [ADMIN] animal_updated | ID: 20, CHANGES: weight: '' → '1,6 - 3,2 kg', image: '' → 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.naturfoto.cz%2Ffullsize%2Fostatni%2Fkorsak-133682.jpg&f=1&nofb=1&ipt=209c1b75498008a31a9844241d6a9d97a2731d24efc6beeb016ed06fe451dc91'
+[2026-05-12 07:03:16] [ADMIN] animal_updated | ID: 20, CHANGES: exclosure: '' → 'Asie'
+[2026-05-12 07:04:17] [ADMIN] logout | via browser
+[2026-05-12 07:04:25] [JOHNSMITH123] login | via browser
+[2026-05-12 07:04:36] [JOHNSMITH123] logout | via browser
+[2026-05-12 07:04:43] [ADMIN] login | via browser
+[2026-05-12 07:05:03] [ADMIN] animal_updated | ID: 20, CHANGES: amount: '0' → '3'
+[2026-05-12 07:06:07] [ADMIN] logout | via browser
+[2026-05-12 07:06:14] [JOHNSMITH123] login | via browser
+[2026-05-12 07:06:18] [JOHNSMITH123] logout | via browser
+[2026-05-12 07:06:20] [ADMIN] login | via browser
+[2026-05-12 07:17:29] [ADMIN] animal_updated | ID: 20, CHANGES: habitat: '' → 'Step, polopoušť', location_of_origin: '' → 'Afganistan, Čína, Írán, Kazachstán, Kyrgyzstán, Mongolsko, Rusko, Tádžikistán, Turkmenistán, Uzbekistán', lifespan: '' → '9 - 13 let', height: '' → '45 - 65 cm', description: '' → 'Korsak je noční šedá až nažloutlá středně velká liška obývající stepi a polopouště. V zimním období má srst výrazně delší, hustší a jemnější. Teritorium jedné kolonie dosahuje plochy až 40 km². Korsakové svoje teritorium v průběhu roku mění. Během zimy opouštějí místa s vysokou sněhovou pokrývkou a přibližují se k lidským obydlím. Protože dokáže přežít dlouhou dobu bez vody, osidluje i území bez vodních ploch a řek. Obvykle obývá nory jezevců a svišťů. V případě potřeby umí vyhrabat vlastní noru, ta je ale krátká a jednoduchá. V případě ohrožení vyskakuje na zadní a na nepřítele prská.
+
+Korsaka nejvíce ohrožuje ztráta přirozeného prostředí, pytláctví a přírodní katastrofy. Ohrožován je i lovem pro kvalitní kožešinu. V letech 1923–1924 bylo v Rusku zabito 135 700 jedinců.', extninction_index: '0' → '1', diet: '' → 'Drobní savci, ptáci, hmyz, plody'
+[2026-05-12 12:52:10] [ADMIN] login | via browser
+[2026-05-12 12:56:37] [ADMIN] animal_created | ID: 21, NAME: Test
+[2026-05-12 12:56:48] [ADMIN] animal_deleted | ID: 21, name: Test
+[2026-05-13 16:53:24] [ADMIN] login | via browser
+[2026-05-13 18:25:32] [ADMIN] login | via browser
+[2026-05-13 18:52:54] [ADMIN] opening_hours_updated | id 2: 09:00-16:00 → 09:00-19:00
+[2026-05-13 18:53:13] [ADMIN] opening_hours_updated | id 2: 09:00-19:00 → 09:00-16:00
+[2026-05-13 19:00:05] [ADMIN] opening_hours_updated | id 1: 09:00-16:00 → 07:00-16:00
+[2026-05-13 19:00:11] [ADMIN] opening_hours_updated | id 1: 07:00-16:00 → 09:00-16:00
+[2026-05-14 06:33:38] [ADMIN] login | via browser
+[2026-05-14 07:31:40] [ADMIN] session_timeout | due to inactivity
+[2026-05-14 07:31:45] [ADMIN] login | via browser
+[2026-05-14 12:45:38] [ADMIN] login | via browser
+[2026-05-15 12:54:48] [ADMIN] login | via browser
+[2026-05-15 12:58:35] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 12:58:35] [ADMIN] management_updated | banking: ('ČSOB', '372604403/0300') → ('ČSOB', '372604403/0303')
+[2026-05-15 12:58:58] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 12:58:58] [ADMIN] management_updated | banking: ('ČSOB', '372604403/0303') → ('ČSOB', '372604403/0300')
+[2026-05-15 13:04:01] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:04:01] [ADMIN] management_updated | ID: 12, CHANGES: identification_num: '00101451 ' → '0010145152 '
+[2026-05-15 13:04:17] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:04:17] [ADMIN] management_updated | ID: 12, CHANGES: identification_num: '0010145152 ' → '00101451 '
+[2026-05-15 13:04:45] [ADMIN] opening_hours_updated | ID 1: 09:00-16:00 → 00:00-16:00
+[2026-05-15 13:04:45] [ADMIN] management_updated | ID: 12, NO CHANGES
+[2026-05-15 13:05:04] [ADMIN] opening_hours_updated | ID 1: 00:00-16:00 → 09:00-16:00
+[2026-05-15 13:05:04] [ADMIN] management_updated | ID: 12, NO CHANGES
+[2026-05-15 13:14:33] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:14:33] [ADMIN] management_updated | ID: 12, CHANGES: address: ' ' → 'Zoologická zahrada Brno 2 příspěvková organizace U zoologické zahrady 57, 635 00 Brno', identification_num: ' ' → '00101451 ', contact_info: ' ' → 'info@zoobrno2.czz +420 824 568 771', contact_gate: ' ' → 'vratnice@zoobrno2.cz +420 884 756 158', contact_returns: ' ' → 'ztratynalezy@zoobrno2.cz +420 557 987 121', banking: ' ' → 'ČSOB 372604403/0300', databox_id: ' ' → 'sj8mvuu '
+[2026-05-15 13:15:18] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:15:18] [ADMIN] management_updated | ID: 12, CHANGES: address: ' ' → 'Zoologická zahrada Brno 2 příspěvková organizace U zoologické zahrady 57, 635 00 Brno', identification_num: ' ' → '00101451 ', contact_info: ' ' → 'info@zoobrno2.cz +420 824 568 771', contact_gate: ' ' → 'vratnice@zoobrno2.cz +420 884 756 158', contact_returns: ' ' → 'ztratynalezy@zoobrno2.cz +420 557 987 121', banking: ' ' → 'ČSOB 372604403/0300', databox_id: ' ' → 'sj8mvuu '
+[2026-05-15 13:17:01] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:17:01] [ADMIN] management_updated | ID: 12, CHANGES: identification_num: '00101451 ' → '001014512 '
+[2026-05-15 13:17:32] [ADMIN] opening_hours_updated | NO CHANGES
+[2026-05-15 13:17:32] [ADMIN] management_updated | ID: 12, CHANGES: identification_num: '001014512 ' → '00101451 '
+[2026-05-16 11:52:42] [ADMIN] login | via browser
+[2026-05-16 12:08:38] [ADMIN] event_updated | ID: 2, CHANGES: date_published: '2026-05-14' → '2026-05-18'
+[2026-05-16 12:44:59] [ADMIN] logout | via browser
+[2026-05-16 12:45:02] [ADMIN] login | via browser
+[2026-05-16 13:22:44] [ADMIN] logout | via browser
+[2026-05-16 13:22:57] [JOHNSMITH123] login | via browser
+[2026-05-16 13:24:50] [JOHNSMITH123] logout | via browser
+[2026-05-16 13:27:43] [ADMIN] login | via browser

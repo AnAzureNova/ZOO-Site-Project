@@ -3,8 +3,7 @@
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
-        <h1>ZÁZNAM NÁKUPŮ</h1>
-        <button class="editor_button" onclick="window.location.href='evidence.php?page=payments&action=new'">+ NOVÁ AKCE</button>
+        <div><img id="header_icon" src="STYLE/resources/icons/purchases.png"><h1>ZÁZNAM NÁKUPŮ</h1></div>
     </div>
     <div class="editor_table_wrapper">
         <table class="editor_table">

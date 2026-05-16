@@ -32,7 +32,7 @@
                     $user = $match[2] ?? "SYSTEM"; # [2] uživatel (ADMIN)
                     $other = $match[3] ?? $line; # [3] zbytek (action | details)
                     [$action, $detail] = array_pad(explode(" | ", $other, 2), 2, ""); # rozdělí other na příslušné parametry
-
+                    if (empty($match) || $match[1] === "DATE ERR - TIME ERR") continue;
                     echo "<div class='syslog_entry'>";
                     echo "<span class='timestamp'>[".htmlspecialchars($timestamp)."] </span>
                         <span class='syslog_user'>".htmlspecialchars($user)."</span>
@@ -45,5 +45,5 @@
 </div>
 <form method="post" action="" class="syslog_input">
     <input type="text" placeholder="> ENTER REPORT" name="log_input" id="log_input">
-    <button type="submit">>>></button>
+    <button class="editor_button"  type="submit">SEND</button>
 </form>

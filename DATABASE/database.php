@@ -233,4 +233,33 @@
         $stmt = $db->prepare("UPDATE employees_registry SET web_activity = NOW() WHERE id = :id");
         $stmt->execute(["id" => $user["id"]]);
     }
+
+
+
+
+
+
+    function updateOpeningTime($id, $from, $to): void {
+        global $db;
+        $stmt = $db->prepare("UPDATE opening_time SET `from`=:from, `to`=:to WHERE id=:id");
+        $stmt->bindValue(":from", $from, $from === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":to", $to, $to === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+ 
+    function getZooManagementByName($name): mixed {
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM zoo_management WHERE name = :name");
+        $stmt->execute(["name" => $name]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    function updateZooManagement($name, $parameter_1, $parameter_2): void {
+        global $db;
+        $stmt = $db->prepare("UPDATE zoo_management SET parameter_1=:parameter_1, parameter_2=:parameter_2 WHERE name=:name");
+        $stmt->bindValue(":parameter_1", $parameter_1, PDO::PARAM_STR);
+        $stmt->bindValue(":parameter_2", $parameter_2, PDO::PARAM_STR);
+        $stmt->bindValue(":name", $name, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 ?>

@@ -5,7 +5,7 @@
         $employee = loginEmployee($username, $password);
 
         if ($employee) {
-            $_SESSION["evidence_user"] = ["id"=>$employee["id"], "username" => $employee["web_username"], "firstname" => $employee["firstname"], "surname" => $employee["surname"], "occupation" => $employee["occupation"],"status" => $employee["status"],];
+            $_SESSION["evidence_user"] = ["id"=>$employee["id"], "username" => $employee["web_username"], "firstname" => $employee["firstname"], "surname" => $employee["surname"], "occupation" => $employee["occupation"],"status" => $employee["status"], "web_username" => $employee["web_username"], "salary" => $employee["salary"], "shift" => $employee["shift"]];
             logAction("login", $_SESSION["evidence_user"], "via browser");
             header("Location: /evidence.php");
             exit();
@@ -20,7 +20,7 @@
 <div class="evidence_login">
     <div class="login_box">
         <div class="login_top">
-            <a href="/index.php">ZPĚT</a>
+            <a href="/index.php" class="editor_button" >X</a>
             <h1>PŘIHLÁŠENÍ</h1>
             <p>Pro přístup k systému se prosím přihlašte za pomocí vašich přiřazených přihlašovacích údajů.</p>
             <?php 

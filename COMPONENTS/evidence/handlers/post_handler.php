@@ -225,5 +225,57 @@
                 exit();
             }
         }
+
+
+        #--------------------------------------------------------------------------------------
+        # tato část se zaměřuje na úpravu provozní doby a kontaktů (management/management page tab)
+        if ($page === "management") {
+            if ($formAction === "save_management") {
+                $from = $_POST["from"] ?? [];
+                $to = $_POST["to"] ?? [];
+                $changed = [];
+ 
+                foreach ($from as $id => $fromVal) {
+                    $toVal = $to[$id] ?? "";
+ 
+                    $parsedFrom = DateTime::createFromFormat("H:i", $fromVal);
+                    $parsedTo = DateTime::createFromFormat("H:i", $toVal);
+                    $fromValue = $parsedFrom ? $parsedFrom->format("H:i:s") : null;
+                    $toValue = $parsedTo ? $parsedTo->format("H:i:s") : null;
+ 
+                    $old = get("opening_time", $id);
+                    $oldFrom = $old["from"] ? substr($old["from"], 0, 5) : "";
+                    $oldTo = $old["to"] ? substr($old["to"], 0, 5) : "";
+ 
+                    if ($oldFrom !== $fromVal || $oldTo !== $toVal) {
+                        updateOpeningTime($id, $fromValue, $toValue);
+                        $changed[] = "ID {$id}: {$oldFrom}-{$oldTo} → {$fromVal}-{$toVal}";
+                    }
+                }
+ 
+                $detail = !empty($changed) ? implode(", ", $changed) : "NO CHANGES";
+                logAction("opening_hours_updated", $_SESSION["evidence_user"], $detail);
+
+                $rows = $_POST["rows"] ?? [];
+                foreach ($rows as $name => $params) {
+                    $p1 = trim($params["parameter_1"] ?? "");
+                    $p2 = trim($params["parameter_2"] ?? "");
+ 
+                    $old = getZooManagementByName($name);
+                    $oldP1 = (string)($old["parameter_1"] ?? "");
+                    $oldP2 = (string)($old["parameter_2"] ?? "");
+ 
+                    if ($oldP1 !== $p1 || $oldP2 !== $p2) {
+                        updateZooManagement($name, $p1, $p2);
+                        $changed[] = "{$name}: '{$oldP1} {$oldP2}' → '{$p1} {$p2}'";
+                    }
+                }
+ 
+                $detail = !empty($changed) ? "ID: {$id}, CHANGES: ".implode(", ", $changed) : "ID: {$id}, NO CHANGES";
+                logAction("management_updated", $_SESSION["evidence_user"], $detail);
+                echo "<script>window.location.href='/evidence.php?page=management';</script>";
+                exit();
+            }
+        }
     }
 ?>

@@ -3,7 +3,7 @@
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
-        <h1>EVIDENCE ZVÍŘAT</h1>
+        <div><img id="header_icon" src="STYLE/resources/icons/animals.png"><h1>EVIDENCE ZVÍŘAT</h1></div>
         <button class="editor_button" onclick="window.location.href='evidence.php?page=animals&action=new'">+ NOVÉ ZVÍŘE</button>
     </div>
     <div class="editor_table_wrapper">

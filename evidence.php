@@ -45,8 +45,8 @@
 ?>
 <main>
     <aside class="evidence_sideNav">
-        <div><img id="sidebar_icon" src="STYLE/resources/icons/close.png"><a href="evidence.php?page=home">HLAVNÍ STRÁNKA</a></div>
-        <div><img id="sidebar_icon" src="STYLE/resources/icons/close.png"><a href="evidence.php?page=management">MANAGEMENT ZOO</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/home.png"><a href="evidence.php?page=home">HLAVNÍ STRÁNKA</a></div>
+        <div><img id="sidebar_icon" src="STYLE/resources/icons/wrench.png"><a href="evidence.php?page=management">MANAGEMENT ZOO</a></div>
         <div><img id="sidebar_icon" src="STYLE/resources/icons/animals.png"><a href="evidence.php?page=animals">EVIDENCE ZVÍŘAT</a></div>
         <div><img id="sidebar_icon" src="STYLE/resources/icons/exclosures.png"><a href="evidence.php?page=exclosures">EXPOZICE</a></div>
         <div><img id="sidebar_icon" src="STYLE/resources/icons/events.png"><a href="evidence.php?page=events">AKCE A PROGRAMY</a></div>

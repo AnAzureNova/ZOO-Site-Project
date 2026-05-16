@@ -3,7 +3,7 @@
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
-        <h1>PŘEHLED ZAMĚSTNANCŮ</h1>
+        <div><img id="header_icon" src="STYLE/resources/icons/employees.png"><h1>PŘEHLED ZAMĚSTNANCŮ</h1></div>
         <?php if ($_SESSION["evidence_user"]["status"] === "admin"): ?>
             <button class="editor_button" onclick="window.location.href='evidence.php?page=employees&action=new'">+ NOVÝ UŽIVATEL</button>
         <?php endif; ?>
@@ -40,7 +40,7 @@
                                 console_log($employee["name"].$diff);
                                 if ($diff === 0) $lastActive = "Dnes";
                                 else if ($diff === 1) $lastActive = "Včera";
-                                else $lastActive = "Před ".$diff.". dny";
+                                else $lastActive = "Před ".$diff." dny";
 
                                 if (class_exists("IntlDateFormatter")) {
                                     $formatter = new IntlDateFormatter("cs_CZ", IntlDateFormatter::LONG, IntlDateFormatter::NONE);

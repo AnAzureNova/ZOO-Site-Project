@@ -3,7 +3,7 @@
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
-        <h1>EXPOZICE</h1>
+        <div><img id="header_icon" src="STYLE/resources/icons/exclosures.png"><h1>EXPOZICE</h1></div>
         <button class="editor_button" onclick="window.location.href='evidence.php?page=exclosures&action=new'">+ NOVÁ EXPOZICE</button>
     </div>
     <div class="editor_table_wrapper">

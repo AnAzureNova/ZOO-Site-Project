@@ -3,7 +3,7 @@
 ?>
 <div class="evidence_editor">
     <div class="editor_section_header">
-        <h1>AKCE A PROGRAMY</h1>
+        <div><img id="header_icon" src="STYLE/resources/icons/events.png"><h1>AKCE A PROGRAMY</h1></div>
         <button class="editor_button" onclick="window.location.href='evidence.php?page=events&action=new'">+ NOVÁ AKCE</button>
     </div>
     <div class="editor_table_wrapper">

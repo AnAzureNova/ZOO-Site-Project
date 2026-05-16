@@ -1,3 +1,4 @@
+.evidence_editor{ z-index: 1; filter: drop-shadow(2px 18px 44px #141414);}
 .editor_section_header {
     display: flex;
     justify-content: space-between;
@@ -7,19 +8,37 @@
     background-position: 0 -200px;
     background-size: cover;
     background-blend-mode: multiply;
-    background-color: #2b2b2b;
-    filter: drop-shadow(2px 18px 44px #0000006e);
+    background-color: #272727;
+}
+#header_icon {
+    width: 35px;
+    height: 35px;
+}
+.editor_section_header div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 60%;
+}
+.editor_section_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #272727;
 }
 .editor_muted { color: #888; }
 .editor_italic { font-style: italic; }
 
-.editor_table_wrapper {overflow-x: auto;}
+.editor_table_wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 .editor_table {
     width: 100%;
     border-collapse: collapse;
     font-family: Comfortaa;
     font-size: 0.85rem;
-    filter: drop-shadow(2px 18px 44px #0000006e);
 }
 .editor_table thead tr {
     background-color: #222;
@@ -30,6 +49,10 @@
 .editor_table th, .editor_table td {
     padding: 12px 16px;
     text-align: left;
+}
+.editor_table.editor_table--compact th,
+.editor_table.editor_table--compact td {
+    padding: 4px 16px;
 }
 .editor_table tbody tr {
     background-color: #2b2b2b;
@@ -43,7 +66,9 @@
     color: #888;
     padding: 40px;
 }
-
+.editor_section_footer {
+    filter: none;
+}
 
 .editor_button{
     width: 15%;
@@ -84,6 +109,13 @@
     display: flex;
     flex-direction: column;
 }
+.editor_edit_group h2{
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+}
 .editor_edit_group h4{
     color: #ffc272;
     letter-spacing: 2px;
@@ -108,7 +140,7 @@
     color: #888;
     letter-spacing: 1px;
 }
-.editor_field input, .editor_field select, .editor_field textarea{
+.editor_field input, .editor_field select, .editor_field textarea, .editor_table input{
     background: #3a3a3a;
     border: 1px solid #555;
     padding: 9px 12px;
@@ -118,6 +150,14 @@
     outline: none;
     transition: border-color 200ms;
     resize: vertical;
+}
+.editor_table input{
+    background: #272727;
+    width: 100%;
+    padding: 2px 12px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+  filter: invert(100%) sepia(0%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 .editor_field input:focus, .editor_field select:focus, .editor_field textarea:focus {
     border-color: #ffc272;
